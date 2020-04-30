@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% extends "blog/base.html" %}
+
+{% block title %}Аутентификация{% endblock %}
+
+{% block content %}
+  <h1>Аутентификация</h1>
+  {% if form.errors %}
+    <p>
+      Логин или пароль не правильные.
+      Пожалуйста, попробуйте ещё раз.
+    </p>
+  {% else %}
+    <p></p>
+  {% endif %}
+  <div class="login-form">
+    <form action="{% url 'blog:login' %}" method="post">
+      {{ form.as_p }}
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{{ next }}" />
+      <p><input type="submit" value="Log-in"></p>
+    </form>
+    <p><a href="{% url "blog:password_reset" %}">Забыли пароль?</a></p>
+  </div>
+{% endblock %}
+</html>

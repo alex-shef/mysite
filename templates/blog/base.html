@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static "css/blog.css" %}" rel="stylesheet">
+</head>
+<body>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="sidebar">
+        <h2>
+            <a href="http://127.0.0.1:8000/blog/">Блог о банках РБ</a>
+        </h2>
+            <p>В этом блоге будет публиковаться информация о белорусских банках:
+                сравнение услуг, комиссий, эксклюзивных предложений.</p>
+        <br>
+        <span class="user">
+            {% if request.user.is_authenticated %}
+                Привет, {{ request.user.first_name }}.
+                <a href="{% url "blog:logout" %}">&nbsp;&nbsp;&nbsp;Выйти из аккаунта</a>
+            {% else %}
+                <a href="{% url "blog:login" %}">Аутентификация</a>
+            {% endif %}
+        </span>
+    </div>
+</body>
+</html>

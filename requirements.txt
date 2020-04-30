@@ -1,0 +1,7 @@
+django
+asgiref
+django_summernote
+pip
+pytz
+setuptools
+sqlparse
