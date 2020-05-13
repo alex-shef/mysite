@@ -128,3 +128,6 @@ SUMMERNOTE_THEME = 'bs4'
 LOGIN_REDIRECT_URL = 'blog:account'
 LOGIN_URL = 'blog:login'
 LOGOUT_URL = 'blog:logout'
+
+USERNAME = 'root'
+PASSWORD = 'alex.shef'
