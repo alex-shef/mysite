@@ -5,3 +5,4 @@ pip
 pytz
 setuptools
 sqlparse
+psycopg2
