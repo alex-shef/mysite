@@ -1,7 +1,7 @@
-## Final work IT-academy by Aleksei Shevchuk on Python3 (still in development)
+## Final work IT-academy by Aleksei Shevchuk on Django(Python3) and PostgreSQL.
 
-### The blog about Belarusian banks.
-This blog will publish information about Belarusian banks: comparison of services, commissions, and exclusive offers.
+### The blog with authentication system and full-text search.
+
 
 *SETUP INSTRUCTIONS for Windows*
   
@@ -29,6 +29,8 @@ This blog will publish information about Belarusian banks: comparison of service
    http://127.0.0.1:8000/admin/ - Django administration
 
    http://127.0.0.1:8000/blog/ - the blog
+   
+   http://127.0.0.1:8000/search/ - search
    ***
    
 The user can view posts, share, comment, and log in to their blog account, as well as reset a forgotten password and create a new one.
