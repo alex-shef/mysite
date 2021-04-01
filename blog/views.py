@@ -1,12 +1,11 @@
-from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView
 
-from .forms import EmailPostForm, CommentForm, LoginForm, SearchForm
+from .forms import EmailPostForm, CommentForm, SearchForm, UserRegistrationForm
 from .models import Post
 
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
@@ -107,27 +106,25 @@ def post_search(request):
                                                      'results': results})
 
 
-def user_login(request):
-    if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            user = authenticate(request,
-                                username=cd['username'],
-                                password=cd['password'])
-            if user is not None:
-                if user.is_active:
-                    login(request, user)
-                    return HttpResponse('Аутентификация прошла успешно')
-                else:
-                    return HttpResponse('Заблокированный аккаунт')
-            else:
-                return HttpResponse('Неправильные логин или пароль')
-    else:
-        form = LoginForm()
-    return render(request, 'blog/login.html', {'form': form})
-
-
 @login_required
 def account(request):
     return render(request, 'blog/registration/account.html')
+
+
+def register(request):
+    if request.method == 'POST':
+        user_form = UserRegistrationForm(request.POST)
+        if user_form.is_valid():
+            new_user = user_form.save(commit=False)
+            new_user.set_password(user_form.cleaned_data['password'])
+            new_user.save()
+            return render(request,
+                          'blog/registration/register_done.html',
+                          {'new_user': new_user})
+    else:
+        if request.user.is_authenticated:
+            return HttpResponseRedirect('/blog/account/')
+        user_form = UserRegistrationForm()
+    return render(request,
+                  'blog/registration/register.html',
+                  {'user_form': user_form})

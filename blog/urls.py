@@ -15,7 +15,8 @@ urlpatterns = [
 
     # path('login/', views.user_login, name='login'),
     path('login/', auth_views.LoginView.as_view(
-        template_name='blog/registration/login.html'), name='login'),
+        template_name='blog/registration/login.html',
+        redirect_authenticated_user=True), name='login'),
     path('logout/', auth_views.LogoutView.as_view(
         template_name='blog/registration/logged_out.html'), name='logout'),
     path('account/', views.account, name='account'),
@@ -44,4 +45,6 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(
         template_name='blog/registration/password_reset_complete.html'),
         name='password_reset_complete'),
+
+    path('register/', views.register, name='register')
     ]
