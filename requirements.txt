@@ -6,3 +6,4 @@ pytz
 setuptools
 sqlparse
 psycopg2
+pillow

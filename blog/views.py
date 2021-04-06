@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -5,8 +6,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView
 
-from .forms import EmailPostForm, CommentForm, SearchForm, UserRegistrationForm
-from .models import Post
+from .forms import EmailPostForm, CommentForm, SearchForm, UserRegistrationForm, UserEditForm, ProfileEditForm
+from .models import Post, Profile
 
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 
@@ -118,6 +119,7 @@ def register(request):
             new_user = user_form.save(commit=False)
             new_user.set_password(user_form.cleaned_data['password'])
             new_user.save()
+            profile = Profile.objects.create(user=new_user)
             return render(request,
                           'blog/registration/register_done.html',
                           {'new_user': new_user})
@@ -128,3 +130,23 @@ def register(request):
     return render(request,
                   'blog/registration/register.html',
                   {'user_form': user_form})
+
+
+@login_required
+def edit(request):
+    if request.method == 'POST':
+        user_form = UserEditForm(instance=request.user,
+                                 data=request.POST)
+        profile_form = ProfileEditForm(instance=request.user.profile,
+                                       data=request.POST,
+                                       files=request.FILES)
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+    else:
+        user_form = UserEditForm(instance=request.user)
+        profile_form = ProfileEditForm(instance=request.user.profile)
+    return render(request,
+                  'blog/registration/edit.html',
+                  {'user_form': user_form,
+                   'profile_form': profile_form})

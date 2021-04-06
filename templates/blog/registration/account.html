@@ -6,6 +6,10 @@
 
 {% block content %}
   <h1>Аккаунт</h1>
-  <p>Добро пожаловать.</p>
+  <p>Добро пожаловать.
+     <br><br>
+     Вы можете <a href="{% url "blog:edit" %}">изменить свой профиль</a> или
+     <a href="{% url "blog:password_change" %}">изменить пароль</a>.
+  </p>
 {% endblock %}
 </html>

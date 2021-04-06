@@ -46,5 +46,7 @@ urlpatterns = [
         template_name='blog/registration/password_reset_complete.html'),
         name='password_reset_complete'),
 
-    path('register/', views.register, name='register')
+    path('register/', views.register, name='register'),
+
+    path('edit/', views.edit, name='edit')
     ]
