@@ -34,7 +34,7 @@
         <br><br>
         <span class="user">
             {% if request.user.is_authenticated %}
-                Привет, {{ request.user.first_name }}.
+                Привет, <a href="{% url "blog:account" %}">{{ request.user.first_name }}.</a>
                 <a href="{% url "blog:logout" %}">&nbsp;&nbsp;&nbsp;Выйти из аккаунта</a>
             {% else %}
                 <a href="{% url "blog:login" %}">Аутентификация</a>
