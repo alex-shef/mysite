@@ -4,12 +4,14 @@ from .models import Comment, Profile
 
 from django.contrib.auth.models import User
 
+from django.utils.translation import gettext_lazy as _
+
 
 class EmailPostForm(forms.Form):
-    name = forms.CharField(max_length=25)
+    name = forms.CharField(label=_('Name'), max_length=25)
     email = forms.EmailField()
-    to = forms.EmailField()
-    comments = forms.CharField(required=False, widget=forms.Textarea)
+    to = forms.EmailField(label=_('to'))
+    comments = forms.CharField(label=_('comment'), required=False, widget=forms.Textarea)
 
 
 class CommentForm(forms.ModelForm):
@@ -19,7 +21,7 @@ class CommentForm(forms.ModelForm):
 
 
 class SearchForm(forms.Form):
-    query = forms.CharField()
+    query = forms.CharField(label=_('query'))
 
 
 class LoginForm(forms.Form):
@@ -28,14 +30,17 @@ class LoginForm(forms.Form):
 
 
 class UserRegistrationForm(forms.ModelForm):
-    password = forms.CharField(label='Password',
+    password = forms.CharField(label=_('Password'),
                                widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Repeat password',
+    password2 = forms.CharField(label=_('Repeat password'),
                                 widget=forms.PasswordInput)
 
     class Meta:
         model = User
         fields = ('username', 'first_name', 'email')
+        labels = {
+            'username': _('Username'),
+        }
 
     def clean_password2(self):
         cd = self.cleaned_data

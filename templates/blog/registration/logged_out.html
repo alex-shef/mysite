@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 {% extends "blog/base.html" %}
+{% load i18n %}
 
-{% block title %}Вы вышли из аккаунта{% endblock %}
+{% block title %}{% trans "Вы вышли из аккаунта" %}{% endblock %}
 
 {% block content %}
   <h1>  </h1>
-  <p>Вы вышли из аккаунта.</p>
+  <p>{% trans "Вы вышли из аккаунта" %}.</p>
 {% endblock %}
 </html>

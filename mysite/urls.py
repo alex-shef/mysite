@@ -21,18 +21,21 @@ from django.contrib.sitemaps.views import sitemap
 from blog.sitemaps import PostSitemap
 from django.views.generic.base import RedirectView
 
+from django.conf.urls.i18n import i18n_patterns
+
 sitemaps = {
     'posts': PostSitemap,
 }
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     path('', RedirectView.as_view(url='blog/')),  # for convenience
     path('admin/', admin.site.urls),
+    path('rosetta/', include('rosetta.urls')),
     path('blog/', include('blog.urls', namespace='blog')),
     path('summernote/', include('django_summernote.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap'),
-]
+)
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

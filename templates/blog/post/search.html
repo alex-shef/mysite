@@ -1,31 +1,34 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 {% extends "blog/base.html" %}
+{% load i18n %}
 
-{% block title %}Поиск{% endblock %}
+{% block title %}{% trans "Поиск" %}{% endblock %}
 
 {% block content %}
   {% if query %}
-    <h1>Посты, содержащие "{{ query }}"</h1>
+    <h1>{% trans "Посты, содержащие" %} "{{ query }}"</h1>
     <h3>
-      {% with results.count as total_results %}
-          Найдено {{ total_results }} result {{ total_results|pluralize }}
-      {% endwith %}
+       {% blocktrans trimmed count total_results=results.count %}
+            Found {{ total_results }} result
+       {% plural %}
+            Found {{ total_results }} results
+       {% endblocktrans %}
     </h3>
     {% for post in results %}
         <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
         {{ post.body|safe|truncatewords_html:15 }}
         <br>
     {% empty %}
-      <p>По Вашему запросу ничего не найдено.</p>
+      <p>{% trans "По Вашему запросу ничего не найдено." %}</p>
     {% endfor %}
     <br>
-    <p><a href="{% url "blog:post_search" %}">Новый поиск</a></p>
+    <p><a href="{% url "blog:post_search" %}">{% trans "Новый поиск" %}</a></p>
   {% else %}
-    <h1>Поиск по постам</h1>
+    <h1>{% trans "Поиск по постам" %}</h1>
     <form action="." method="get">
       {{ form.as_p }}
-      <input type="submit" value="Search">
+      <input type="submit" value="{% trans "Поиск" %}">
     </form>
   {% endif %}
 {% endblock %}

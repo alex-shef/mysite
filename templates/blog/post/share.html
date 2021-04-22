@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 {% extends "blog/base.html" %}
-{% block title %}Поделиться постом{% endblock %}
+{% load i18n %}
+
+{% block title %}{% trans "Поделиться постом" %}{% endblock %}
 {% block content %}
     {% if sent %}
-        <h1>E-mail успешно отправлен</h1>
+        <h1>{% trans "E-mail успешно отправлен" %}</h1>
         <p>
-        "{{ post.title }}" было успешно отправлено {{ form.cleaned_data.to }}.
+        "{{ post.title }}" {% trans "было успешно отправлено" %} {{ form.cleaned_data.to }}.
         </p>
     {% else %}
-        <h1>Поделиться "{{ post.title }}" по e-mail</h1>
+        <h1>{% trans "Поделиться"%} "{{ post.title }}" {% trans "по e-mail" %}</h1>
         <form action="." method="post">
             {{ form.as_p }}
             {% csrf_token %}
-            <input type="submit" value="Send e-mail">
+            <input type="submit" value="{% trans "Отправить e-mail" %}">
         </form>
     {% endif %}
 {% endblock %}
 </html>
-

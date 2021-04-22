@@ -1,42 +1,45 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 {% extends "blog/base.html" %}
+{% load i18n %}
 
-{% block title %}Блог о банках РБ - {{ post.title }}{% endblock %}
+{% block title %}{% trans "Блог о банках РБ" %} - {{ post.title }}{% endblock %}
 
 {% block content %}
     <h1>{{ post.title }}</h1>
-    <p class="date">{{ post.author }} опубликовал {{ post.publish }}</p>
+    <p class="date">{{ post.author }} {% trans "опубликовал" %} {{ post.publish }}</p>
     <p>
         {{ post.body|safe|linebreaks }}
     </p>
     <br>
     <p>
-        <a href="{% url "blog:post_share" post.id %}">Поделиться постом</a>
+        <a href="{% url "blog:post_share" post.id %}">{% trans "Поделиться постом" %}</a>
     </p>
 
-    {% with comments.count as total_comments %}
     <h3>
-        {{ total_comments }} comment{{ total_comments|pluralize }}
+        {% blocktrans trimmed count total_comments=comments.count %}
+            {{ total_comments }} comment
+        {% plural %}
+            {{ total_comments }} comments
+        {% endblocktrans %}
     </h3>
-    {% endwith %}
     {% for comment in comments %}
         <div class="comment">
             <p class="info">
-                Комментарий {{ forloop.counter }} добавил {{ comment.name }}
+                {% trans "Комментарий" %} {{ forloop.counter }} {% trans "добавил" %} {{ comment.name }}
                 {{ comment.created }}
             </p>
             {{ comment.body|linebreaks }}
         </div>
     {% endfor %}
     {% if new_comment %}
-        <h3>Ваш комментарий был добавлен.</h3>
+        <h3>{% trans "Ваш комментарий был добавлен." %}</h3>
     {% endif %}
-        <h3>Добавить комментарий</h3>
+        <h3>{% trans "Добавить комментарий" %}</h3>
         <form action="." method="post">
           {{ comment_form.as_p }}
           {% csrf_token %}
-          <p><input type="submit" value="Добавить комментарий"></p>
+          <p><input type="submit" value={% trans "Добавить комментарий" %}></p>
         </form>
 
 {% endblock %}

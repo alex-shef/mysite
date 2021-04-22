@@ -1,4 +1,4 @@
-django
+django~=3.0.5
 asgiref
 django_summernote
 pip
@@ -7,3 +7,4 @@ setuptools
 sqlparse
 psycopg2
 pillow
+django-rosetta

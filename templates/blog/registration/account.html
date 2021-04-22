@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 {% extends "blog/base.html" %}
+{% load i18n %}
 
-{% block title %}Аккаунт{% endblock %}
+{% block title %}{% trans "Аккаунт" %}{% endblock %}
 
 {% block content %}
-  <h1>Аккаунт</h1>
-  <p>Добро пожаловать.
+  <h1>{% trans "Аккаунт" %}</h1>
+  <p>{% trans "Добро пожаловать" %}.
      <br><br>
-     Вы можете <a href="{% url "blog:edit" %}">изменить свой профиль</a> или
-     <a href="{% url "blog:password_change" %}">изменить пароль</a>.
+     {% trans "Вы можете" %} <a href="{% url "blog:edit" %}">{% trans "изменить свой профиль" %}</a> {% trans "или" %}
+     <a href="{% url "blog:password_change" %}">{% trans "изменить пароль" %}</a>.
   </p>
 {% endblock %}
 </html>

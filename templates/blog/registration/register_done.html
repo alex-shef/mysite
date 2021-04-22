@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 {% extends "blog/base.html" %}
+{% load i18n %}
 
-{% block title %}Добро пожаловать{% endblock %}
+{% block title %}{% trans "Добро пожаловать" %}{% endblock %}
 
 {% block content %}
-  <h1>Добро пожаловать, {{ new_user.first_name }}!</h1>
-  <p>Ваш аккаунт успешно создан. Теперь Вы можете <a href="{% url "blog:login" %}">аутентифицироваться</a>.</p>
+  <h1>{% trans "Добро пожаловать" %}, {{ new_user.first_name }}!</h1>
+  <p>{% trans "Ваш аккаунт успешно создан. Теперь Вы можете" %} <a href="{% url "blog:login" %}">{% trans "авторизоваться" %}</a>.</p>
 {% endblock %}
 </html>

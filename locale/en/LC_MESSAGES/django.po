@@ -1,0 +1,2472 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-22 20:01+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\mysite\settings.py:120
+msgid "Russian"
+msgstr "Russian"
+
+#: .\mysite\settings.py:121
+msgid "English"
+msgstr "English"
+
+#: .\templates\blog\base.html:30 .\templates\blog\post\detail.html:6
+#: .\templates\blog\post\list.html:5 .\templates\blog\post\list.html:7
+msgid "Блог о банках РБ"
+msgstr "Blog about Belarusian banks"
+
+#: .\templates\blog\base.html:32
+msgid ""
+"В этом блоге будет публиковаться информация о белорусских банках: сравнение "
+"услуг, комиссий, эксклюзивных предложений."
+msgstr ""
+"This blog will publish information about Belarusian banks: comparison of "
+"services, commissions, and exclusive offers."
+
+#: .\templates\blog\base.html:33 .\templates\blog\post\search.html:6
+#: .\templates\blog\post\search.html:31
+msgid "Поиск"
+msgstr "Search"
+
+#: .\templates\blog\base.html:37
+msgid "Привет"
+msgstr "Hello"
+
+#: .\templates\blog\base.html:38
+msgid "Выйти из аккаунта"
+msgstr "Log out"
+
+#: .\templates\blog\base.html:40 .\templates\blog\registration\login.html:6
+#: .\templates\blog\registration\login.html:9
+msgid "Авторизация"
+msgstr "Log in"
+
+#: .\templates\blog\base.html:48
+msgid "Язык"
+msgstr "Language"
+
+#: .\templates\blog\pagination.html:8
+msgid "Предыдущая"
+msgstr "Previous"
+
+#: .\templates\blog\pagination.html:11
+msgid "Страница"
+msgstr "Page"
+
+#: .\templates\blog\pagination.html:11
+msgid "из"
+msgstr "of"
+
+#: .\templates\blog\pagination.html:14
+msgid "Следующая"
+msgstr "Next"
+
+#: .\templates\blog\post\detail.html:10 .\templates\blog\post\list.html:12
+msgid "опубликовал"
+msgstr "posted"
+
+#: .\templates\blog\post\detail.html:16 .\templates\blog\post\share.html:6
+msgid "Поделиться постом"
+msgstr "Share"
+
+#: .\templates\blog\post\detail.html:20
+#, python-format
+msgid "%(total_comments)s comment"
+msgid_plural "%(total_comments)s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\templates\blog\post\detail.html:29
+msgid "Комментарий"
+msgstr "Comment"
+
+#: .\templates\blog\post\detail.html:29
+msgid "добавил"
+msgstr "added by"
+
+#: .\templates\blog\post\detail.html:36
+msgid "Ваш комментарий был добавлен."
+msgstr "Your comment has been added."
+
+#: .\templates\blog\post\detail.html:38 .\templates\blog\post\detail.html:42
+msgid "Добавить комментарий"
+msgstr "Add a comment"
+
+#: .\templates\blog\post\search.html:10
+msgid "Посты, содержащие"
+msgstr "Posts containing"
+
+#: .\templates\blog\post\search.html:12
+#, python-format
+msgid "Found %(total_results)s result"
+msgid_plural "Found %(total_results)s results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\templates\blog\post\search.html:23
+msgid "По Вашему запросу ничего не найдено."
+msgstr "Nothing was found for your search."
+
+#: .\templates\blog\post\search.html:26
+msgid "Новый поиск"
+msgstr "New search"
+
+#: .\templates\blog\post\search.html:28
+msgid "Поиск по постам"
+msgstr "Search by posts"
+
+#: .\templates\blog\post\share.html:9
+msgid "E-mail успешно отправлен"
+msgstr "E-mail sent successfully"
+
+#: .\templates\blog\post\share.html:11
+msgid "было успешно отправлено"
+msgstr "was sent successfully"
+
+#: .\templates\blog\post\share.html:14
+msgid "Поделиться"
+msgstr "Share"
+
+#: .\templates\blog\post\share.html:14
+msgid "по e-mail"
+msgstr "by e-mail"
+
+#: .\templates\blog\post\share.html:18
+#: .\templates\blog\registration\password_reset_form.html:13
+msgid "Отправить e-mail"
+msgstr "Send an e-mail"
+
+#: .\templates\blog\registration\account.html:6
+#: .\templates\blog\registration\account.html:9
+msgid "Аккаунт"
+msgstr "Account"
+
+#: .\templates\blog\registration\account.html:10
+#: .\templates\blog\registration\register_done.html:6
+#: .\templates\blog\registration\register_done.html:9
+msgid "Добро пожаловать"
+msgstr "Welcome"
+
+#: .\templates\blog\registration\account.html:12
+#: .\templates\blog\registration\password_reset_complete.html:10
+msgid "Вы можете"
+msgstr "You can"
+
+#: .\templates\blog\registration\account.html:12
+msgid "изменить свой профиль"
+msgstr "change your profile"
+
+#: .\templates\blog\registration\account.html:12
+msgid "или"
+msgstr "or"
+
+#: .\templates\blog\registration\account.html:13
+msgid "изменить пароль"
+msgstr "change password"
+
+#: .\templates\blog\registration\edit.html:6
+#: .\templates\blog\registration\edit.html:9
+msgid "Редактирование аккаунта"
+msgstr "Editing an account"
+
+#: .\templates\blog\registration\edit.html:10
+msgid "Вы можете редактировать аккаунт используя следующую форму:"
+msgstr "You can edit your account using the following form:"
+
+#: .\templates\blog\registration\edit.html:15
+msgid "Сохранить"
+msgstr "Save"
+
+#: .\templates\blog\registration\logged_out.html:6
+#: .\templates\blog\registration\logged_out.html:10
+msgid "Вы вышли из аккаунта"
+msgstr "You are logged out of account"
+
+#: .\templates\blog\registration\login.html:10
+msgid "Пожалуйста, используйте следующую форму, чтобы пройти авторизацию."
+msgstr "Please use the following form to complete the authorization process."
+
+#: .\templates\blog\registration\login.html:11
+msgid "Если у Вас нет аккаунта,"
+msgstr "If you don't have an account,"
+
+#: .\templates\blog\registration\login.html:11
+msgid "зарегистрируйтесь"
+msgstr "sign up"
+
+#: .\templates\blog\registration\login.html:14
+msgid "Логин или пароль неправильные. Пожалуйста, попробуйте ещё раз."
+msgstr "The username or password is incorrect. Please try again."
+
+#: .\templates\blog\registration\login.html:21
+msgid "Войти"
+msgstr "Log-in"
+
+#: .\templates\blog\registration\login.html:23
+#: .\templates\blog\registration\password_reset_form.html:9
+msgid "Забыли пароль?"
+msgstr "Forgot password?"
+
+#: .\templates\blog\registration\password_change_done.html:6
+#: .\templates\blog\registration\password_change_done.html:10
+msgid "Пароль изменён"
+msgstr "Password changed"
+
+#: .\templates\blog\registration\password_change_form.html:6
+#: .\templates\blog\registration\password_change_form.html:9
+msgid "Изменить пароль"
+msgstr "Change password"
+
+#: .\templates\blog\registration\password_change_form.html:13
+msgid "Изменить"
+msgstr "Change"
+
+#: .\templates\blog\registration\password_reset_complete.html:6
+#: .\templates\blog\registration\password_reset_confirm.html:6
+#: .\templates\blog\registration\password_reset_confirm.html:9
+#: .\templates\blog\registration\password_reset_done.html:6
+#: .\templates\blog\registration\password_reset_done.html:9
+#: .\templates\blog\registration\password_reset_form.html:6
+msgid "Сброс пароля"
+msgstr "Reset password"
+
+#: .\templates\blog\registration\password_reset_complete.html:9
+msgid "Новый пароль установлен"
+msgstr "New password set"
+
+#: .\templates\blog\registration\password_reset_complete.html:10
+msgid "пройти авторизацию"
+msgstr "log in"
+
+#: .\templates\blog\registration\password_reset_confirm.html:11
+msgid "Пожалуйста, введите ваш новый пароль дважды:"
+msgstr "Please enter your new password twice:"
+
+#: .\templates\blog\registration\password_reset_confirm.html:15
+msgid "Изменить мой пароль"
+msgstr "Change my password"
+
+#: .\templates\blog\registration\password_reset_confirm.html:18
+msgid ""
+"Ссылка для сброса пароля недопустима, возможно она уже была использована. "
+"Пожалуйста, запросите сброс пароля заново."
+msgstr ""
+"The password reset link is not valid, it may have already been used. Please "
+"request a password reset again."
+
+#: .\templates\blog\registration\password_reset_done.html:10
+msgid "Вам отправлено письмо для сброса пароля."
+msgstr "An email has been sent to you to reset your password."
+
+#: .\templates\blog\registration\password_reset_done.html:11
+msgid "Если Вы не получили письмо, возможно введён неправильный e-mail."
+msgstr ""
+"If you did not receive the email, you may have entered an incorrect email "
+"address."
+
+#: .\templates\blog\registration\password_reset_email.html:3
+msgid "Для сброса следуйте по ссылке:"
+msgstr "To reset, follow the link:"
+
+#: .\templates\blog\registration\password_reset_email.html:5
+msgid "Ваше имя пользователя, если вы забыли:"
+msgstr "Your username, if you forgot:"
+
+#: .\templates\blog\registration\password_reset_form.html:10
+msgid "Введите e-mail, чтобы создать новый."
+msgstr "Enter your email address to create a new one."
+
+#: .\templates\blog\registration\register.html:6
+#: .\templates\blog\registration\register.html:9
+#: .\templates\blog\registration\register.html:14
+msgid "Создать аккаунт"
+msgstr "Create an account"
+
+#: .\templates\blog\registration\register.html:10
+msgid "Пожалуйста, зарегистрируйтесь, используя следующую форму:"
+msgstr "Please register using the following form:"
+
+#: .\templates\blog\registration\register_done.html:10
+msgid "Ваш аккаунт успешно создан. Теперь Вы можете"
+msgstr "Your account has been successfully created. Now you can"
+
+#: .\templates\blog\registration\register_done.html:10
+msgid "авторизоваться"
+msgstr "log in"
+
+#: .\venv\Lib\site-packages\django\contrib\messages\apps.py:7
+msgid "Messages"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:7
+msgid "Site Maps"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:45
+msgid "That page number is not an integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:47
+msgid "That page number is less than 1"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:52
+msgid "That page contains no results"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:32
+msgid "Enter a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:103
+#: .\venv\Lib\site-packages\django\forms\fields.py:659
+msgid "Enter a valid URL."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:155
+msgid "Enter a valid integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:166
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: .\venv\Lib\site-packages\django\core\validators.py:240
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:247
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:256
+#: .\venv\Lib\site-packages\django\core\validators.py:276
+msgid "Enter a valid IPv4 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:261
+#: .\venv\Lib\site-packages\django\core\validators.py:277
+msgid "Enter a valid IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:271
+#: .\venv\Lib\site-packages\django\core\validators.py:275
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:305
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:311
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:343
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:352
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:362
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:377
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:396
+#: .\venv\Lib\site-packages\django\forms\fields.py:291
+#: .\venv\Lib\site-packages\django\forms\fields.py:326
+msgid "Enter a number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:398
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:403
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:408
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:470
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:522
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1184
+#: .\venv\Lib\site-packages\django\forms\models.py:759
+msgid "and"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1186
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:104
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:105
+msgid "This field cannot be null."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:106
+msgid "This field cannot be blank."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:107
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or 'month'.
+#. Eg: "Title must be unique for pub_date year"
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:111
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:130
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:937
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:938
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:940
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:981
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1045
+msgid "Comma-separated integers"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1094
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1096
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1239
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1099
+msgid "Date (without time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1237
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1241
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1245
+msgid "Date (with time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1393
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1395
+msgid "Decimal number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1534
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1537
+msgid "Duration"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1587
+msgid "Email address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1610
+msgid "File path"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1676
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1678
+msgid "Floating point number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1716
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1718
+msgid "Integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1801
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1817
+msgid "IPv4 address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1848
+msgid "IP address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1928
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1929
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1931
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1966
+msgid "Positive integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1979
+msgid "Positive small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1993
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2025
+msgid "Small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2032
+msgid "Text"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2060
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2062
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2065
+msgid "Time"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2191
+msgid "URL"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2213
+msgid "Raw binary data"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2278
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2280
+msgid "Universally unique identifier"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:221
+msgid "File"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:360
+msgid "Image"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:778
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:780
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1012
+msgid "One-to-one relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1066
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1067
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1109
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: .\venv\Lib\site-packages\django\forms\boundfield.py:149
+msgid ":?.!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:53
+msgid "This field is required."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:246
+msgid "Enter a whole number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:397
+#: .\venv\Lib\site-packages\django\forms\fields.py:1127
+msgid "Enter a valid date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:421
+#: .\venv\Lib\site-packages\django\forms\fields.py:1128
+msgid "Enter a valid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:443
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:472
+msgid "Enter a valid duration."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:473
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:533
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:534
+msgid "No file was submitted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:535
+msgid "The submitted file is empty."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:537
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:540
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:601
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:763
+#: .\venv\Lib\site-packages\django\forms\fields.py:853
+#: .\venv\Lib\site-packages\django\forms\models.py:1275
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:854
+#: .\venv\Lib\site-packages\django\forms\fields.py:969
+#: .\venv\Lib\site-packages\django\forms\models.py:1274
+msgid "Enter a list of values."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:970
+msgid "Enter a complete value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1186
+msgid "Enter a valid UUID."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: .\venv\Lib\site-packages\django\forms\forms.py:81
+msgid ":"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\forms.py:207
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:93
+msgid "ManagementForm data is missing or has been tampered with"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:345
+#, python-format
+msgid "Please submit %d or fewer forms."
+msgid_plural "Please submit %d or fewer forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:352
+#, python-format
+msgid "Please submit %d or more forms."
+msgid_plural "Please submit %d or more forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:379
+#: .\venv\Lib\site-packages\django\forms\formsets.py:386
+msgid "Order"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:391
+msgid "Delete"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:754
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:758
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:764
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:773
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1094
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1161
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1277
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\utils.py:162
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:395
+msgid "Clear"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:396
+msgid "Currently"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:397
+msgid "Change"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:709
+msgid "Unknown"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:710
+msgid "Yes"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:711
+msgid "No"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:788
+msgid "yes,no,maybe"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:817
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:834
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:836
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:838
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:840
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:842
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:844
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:62
+msgid "p.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:63
+msgid "a.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:68
+msgid "PM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:69
+msgid "AM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:150
+msgid "midnight"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:152
+msgid "noon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:6
+msgid "Monday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:6
+msgid "Tuesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:6
+msgid "Wednesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:6
+msgid "Thursday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:6
+msgid "Friday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:7
+msgid "Saturday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:7
+msgid "Sunday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Mon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Tue"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Wed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Thu"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Fri"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:11
+msgid "Sat"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:11
+msgid "Sun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:14
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:14
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:14
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:14
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:14
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:14
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:15
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:15
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:15
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:15
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:15
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:16
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "jan"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "feb"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "mar"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "apr"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "may"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "jun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:20
+msgid "jul"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:20
+msgid "aug"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:20
+msgid "sep"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:20
+msgid "oct"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:20
+msgid "nov"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:20
+msgid "dec"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:23
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:24
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:25
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:26
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:27
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:28
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:29
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:30
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:31
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:32
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:33
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:34
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:37
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:38
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:39
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:40
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:41
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:42
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:43
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:44
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:45
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:46
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:47
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:48
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\ipv6.py:8
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:69
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:235
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: .\venv\Lib\site-packages\django\utils\text.py:254
+#: .\venv\Lib\site-packages\django\utils\timesince.py:83
+msgid ", "
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:9
+#, python-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:10
+#, python-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:11
+#, python-format
+msgid "%d week"
+msgid_plural "%d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:12
+#, python-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:13
+#, python-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:14
+#, python-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:72
+msgid "0 minutes"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:110
+msgid "Forbidden"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:111
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:115
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your Web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:120
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:124
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
+"\" …> for links to third-party sites."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:132
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:137
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:142
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:41
+msgid "No year specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:61
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:111
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:208
+msgid "Date out of range"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:90
+msgid "No month specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:142
+msgid "No day specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:188
+msgid "No week specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:338
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:367
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:589
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:623
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\detail.py:54
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:67
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:72
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:154
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:40
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:42
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:80
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
+msgid "Django: the Web framework for perfectionists with deadlines."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:346
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:368
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:369
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+"\">DEBUG=True</a> is in your settings file and you have not configured any "
+"URLs."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:384
+msgid "Django Documentation"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:385
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:396
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:397
+msgid "Get started with Django"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:408
+msgid "Django Community"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:409
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_summernote\models.py:12
+msgid "summernote_name"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_summernote\models.py:14
+msgid "summernote_file"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_summernote\models.py:18
+msgid "summernote_uplouded"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_summernote\models.py:34
+msgid "summernote_attachment"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_summernote\models.py:35
+msgid "summernote_attachments"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_summernote\views.py:71
+msgid "Only POST method is allowed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_summernote\views.py:86
+msgid "Attachment module is disabled"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_summernote\views.py:93
+msgid "Only authenticated users are allowed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_summernote\views.py:99
+msgid "No files were requested"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_summernote\views.py:140
+msgid "File size exceeds the limit allowed and cannot be saved"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django_summernote\views.py:160
+msgid "Failed to save attachment"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:132
+#, python-format
+msgid "Error: Cannot handle glob %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:286
+#, python-format
+msgid "Cannot read %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:456
+#, python-format
+msgid "Unimplemented function: %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:606
+#, python-format
+msgid "new name needed for rename of %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:628
+#, python-format
+msgid "Unhandled filechange type: %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1034
+msgid "Couldn't parse rename source"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1064
+#, python-format
+msgid "Malformed %(refname)s line: '%(line)s'"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1432
+#, python-format
+msgid "Unsupported command: '%s'"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1434
+#, python-format
+msgid "Could not parse line: '%s'"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1506
+#, python-format
+msgid "%s does not appear to be a valid git repository"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1552
+#, python-format
+msgid "Processed %d blob sizes"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1628
+msgid ""
+"Error: With --path-rename, if OLD_NAME and NEW_NAME are both non-empty and "
+"either ends with a slash then both must."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1632
+#: .\venv\Lib\site-packages\git_filter_repo.py:1639
+msgid "Error: Pathnames cannot begin with a '/'"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1642
+#, python-format
+msgid "Error: Invalid path component '%s' found in '%s'"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1665
+#, python-format
+msgid "Error: HelperFilter given invalid option_string: %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1677
+msgid ""
+"Rewrite (or analyze) repository history\n"
+"\n"
+"    git-filter-repo destructively rewrites history (unless --analyze or\n"
+"    --dry-run are given) according to specified rules.  It refuses to do "
+"any\n"
+"    rewriting unless either run from a clean fresh clone, or --force was\n"
+"    given.\n"
+"\n"
+"    Basic Usage:\n"
+"      git-filter-repo --analyze\n"
+"      git-filter-repo [FILTER/RENAME/CONTROL OPTIONS]\n"
+"\n"
+"    See EXAMPLES section for details.\n"
+"    "
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1692
+msgid ""
+"CALLBACKS\n"
+"\n"
+"    All callback functions are of the same general format.  For a command "
+"line\n"
+"    argument like\n"
+"      --foo-callback 'BODY'\n"
+"\n"
+"    the following code will be compiled and called:\n"
+"      def foo_callback(foo):\n"
+"        BODY\n"
+"\n"
+"    Thus, to replace 'Jon' with 'John' in author/committer/tagger names:\n"
+"      git filter-repo --name-callback 'return name.replace(b\"Jon\", b\"John"
+"\")'\n"
+"\n"
+"    To remove all 'Tested-by' tags in commit (or tag) messages:\n"
+"      git filter-repo --message-callback 'return re.sub(br\"\\nTested-by:.*"
+"\", \"\", message)'\n"
+"\n"
+"    To remove all .DS_Store files:\n"
+"      git filter-repo --filename-callback 'return None if os.path."
+"basename(filename) == b\".DS_Store\" else filename'\n"
+"\n"
+"    For more detailed examples and explanations AND caveats, see\n"
+"      https://htmlpreview.github.io/?https://github.com/newren/git-filter-"
+"repo/blob/docs/html/git-filter-repo.html#CALLBACKS\n"
+"\n"
+"EXAMPLES\n"
+"\n"
+"    To get a bunch of reports mentioning renames that have occurred in\n"
+"    your repo and listing sizes of objects aggregated by any of path,\n"
+"    directory, extension, or blob-id:\n"
+"      git filter-repo --analyze\n"
+"\n"
+"    (These reports can help you choose how to filter your repo; it can\n"
+"    be useful to re-run this command after filtering to regenerate the\n"
+"    report and verify the changes look correct.)\n"
+"\n"
+"    To extract the history that touched just 'guides' and 'tools/releases':\n"
+"      git filter-repo --path guides/ --path tools/releases\n"
+"\n"
+"    To remove foo.zip and bar/baz/zips from every revision in history:\n"
+"      git filter-repo --path foo.zip --path bar/baz/zips/ --invert-paths\n"
+"\n"
+"    To replace the text 'password' with 'p455w0rd':\n"
+"      git filter-repo --replace-text <(echo \"password==>p455w0rd\")\n"
+"\n"
+"    To use the current version of the .mailmap file to update authors,\n"
+"    committers, and taggers throughout history and make it permanent:\n"
+"      git filter-repo --use-mailmap\n"
+"\n"
+"    To extract the history of 'src/', rename all files to have a new "
+"leading\n"
+"    directory 'my-module' (e.g. src/foo.java -> my-module/src/foo.java), "
+"and\n"
+"    add a 'my-module-' prefix to all tags:\n"
+"      git filter-repo --path src/ --to-subdirectory-filter my-module --tag-"
+"rename '':'my-module-'\n"
+"\n"
+"    For more detailed examples and explanations, see\n"
+"      https://htmlpreview.github.io/?https://github.com/newren/git-filter-"
+"repo/blob/docs/html/git-filter-repo.html#EXAMPLES"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1753
+msgid "Analysis"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1755
+msgid ""
+"Analyze repository history and create a report that may be useful in "
+"determining what to filter in a subsequent run. Will not modify your repo."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1759
+msgid "Filtering based on paths (see also --filename-callback)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1762
+msgid ""
+"Invert the selection of files from the specified --path-{match,glob,regex} "
+"options below, i.e. only select files matching none of those options."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1769
+msgid ""
+"Exact paths (files or directories) to include in filtered history.  Multiple "
+"--path options can be specified to get a union of paths."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1774
+msgid ""
+"Glob of paths to include in filtered history. Multiple --path-glob options "
+"can be specified to get a union of paths."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1779
+msgid ""
+"Regex of paths to include in filtered history. Multiple --path-regex options "
+"can be specified to get a union of paths"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1783
+msgid ""
+"Match on file base name instead of full path from the top of the repo.  "
+"Incompatible with --path-rename, and incompatible with matching against "
+"directory names."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1787
+msgid "Renaming based on paths (see also --filename-callback)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1792
+msgid ""
+"Path to rename; if filename or directory matches OLD_NAME rename to "
+"NEW_NAME.  Multiple --path-rename options can be specified.  NOTE: If you "
+"combine filtering options with renaming ones, do not rely on a rename "
+"argument to select paths; you also need a filter to select them."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1798
+msgid "Path shortcuts"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1802
+msgid ""
+"Specify several path filtering and renaming directives, one per line.  Lines "
+"with '==>' in them specify path renames, and lines can begin with "
+"'literal:' (the default), 'glob:', or 'regex:' to specify different matching "
+"styles.  Blank lines and lines starting with a '#' are ignored."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1809
+msgid ""
+"Only look at history that touches the given subdirectory and treat that "
+"directory as the project root.  Equivalent to using '--path DIRECTORY/ --"
+"path-rename DIRECTORY/:'"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1814
+msgid ""
+"Treat the project root as instead being under DIRECTORY. Equivalent to using "
+"'--path-rename :DIRECTORY/'"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1817
+msgid "Content editing filters (see also --blob-callback)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1820
+msgid ""
+"A file with expressions that, if found, will be replaced. By default, each "
+"expression is treated as literal text, but 'regex:' and 'glob:' prefixes are "
+"supported.  You can end the line with '==>' and some replacement text to "
+"choose a replacement choice other than the default of '{}'."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1828
+msgid "Strip blobs (files) bigger than specified size (e.g. '5M', '2G', etc)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1831
+msgid ""
+"Read git object ids from each line of the given file, and strip all of them "
+"from history"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1834
+msgid "Renaming of refs (see also --refname-callback)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1837
+msgid ""
+"Rename tags starting with OLD to start with NEW.  For example, --tag-rename "
+"foo:bar will rename tag foo-1.2.3 to bar-1.2.3; either OLD or NEW can be "
+"empty."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1841
+msgid "Filtering of commit messages (see also --message-callback)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1844
+msgid ""
+"By default, since commits are rewritten and thus gain new hashes, references "
+"to old commit hashes in commit messages are replaced with new commit hashes "
+"(abbreviated to the same length as the old reference).  Use this flag to "
+"turn off updating commit hashes in commit messages."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1850
+msgid ""
+"Do not reencode commit messages into UTF-8.  By default, if the commit "
+"object specifies an encoding for the commit message, the message is re-"
+"encoded into UTF-8."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1854
+msgid ""
+"Filtering of names & emails (see also --name-callback and --email-callback)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1859
+msgid ""
+"Use specified mailmap file (see git-shortlog(1) for details on the format) "
+"when rewriting author, committer, and tagger names and emails.  If the "
+"specified file is part of git history, historical versions of the file will "
+"be ignored; only the current contents are consulted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1866
+msgid "Same as: '--mailmap .mailmap' "
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1868
+msgid "Parent rewriting"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1873
+msgid ""
+"Replace refs (see git-replace(1)) are used to rewrite parents (unless turned "
+"off by the usual git mechanism); this flag specifies what do do with those "
+"refs afterward. Replace refs can either be deleted or updated to point at "
+"new commit hashes.  Also, new replace refs can be added for each commit "
+"rewrite.  With 'update-or-add', new replace refs are only added for commit "
+"rewrites that aren't used to update an existing replace ref. default is "
+"'update-and-add' if $GIT_DIR/filter-repo/already_ran does not exist; 'update-"
+"or-add' otherwise."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1885
+msgid ""
+"Whether to prune empty commits.  'auto' (the default) means only prune "
+"commits which become empty (not commits which were empty in the original "
+"repo, unless their parent was pruned). When the parent of a commit is "
+"pruned, the first non-pruned ancestor becomes the new parent."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1892
+msgid ""
+"Since merge commits are needed for history topology, they are typically "
+"exempt from pruning.  However, they can become degenerate with the pruning "
+"of other commits (having fewer than two parents, having one commit serve as "
+"both parents, or having one parent as the ancestor of the other.)  If such "
+"merge commits have no file changes, they can be pruned.  The default "
+"('auto') is to only prune empty merge commits which become degenerate (not "
+"which started as such)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1901
+msgid ""
+"Even if the first parent is or becomes an ancestor of another parent, do not "
+"prune it.  This modifies how --prune-degenerate behaves, and may be useful "
+"in projects who always use merge --no-ff."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1906
+msgid "Generic callback code snippets"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1908
+msgid ""
+"Python code body for processing filenames; see CALLBACKS sections below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1911
+msgid ""
+"Python code body for processing messages (both commit messages and tag "
+"messages); see CALLBACKS section below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1914
+msgid ""
+"Python code body for processing names of people; see CALLBACKS section below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1917
+msgid ""
+"Python code body for processing emails addresses; see CALLBACKS section "
+"below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1920
+msgid "Python code body for processing refnames; see CALLBACKS section below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1924
+msgid ""
+"Python code body for processing blob objects; see CALLBACKS section below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1927
+msgid ""
+"Python code body for processing commit objects; see CALLBACKS section below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1930
+msgid ""
+"Python code body for processing tag objects; see CALLBACKS section below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1933
+msgid ""
+"Python code body for processing reset objects; see CALLBACKS section below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1937
+msgid ""
+"Specifying alternate source or target locations implies --partial,\n"
+"except that the normal default for --replace-refs is used.  However,\n"
+"unlike normal uses of --partial, this doesn't risk mixing old and new\n"
+"history since the old and new histories are in different repositories."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1941
+msgid "Location to filter from/to"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1944
+msgid "Git repository to read from"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1946
+msgid "Git repository to overwrite with filtered history"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1948
+msgid "Miscellaneous options"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1950
+msgid "Show this help message and exit."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1952
+msgid "Display filter-repo's version and exit."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1954
+msgid ""
+"Rewrite repository history even if the current repo does not look like a "
+"fresh clone.  History rewriting is irreversible (and includes immediate "
+"pruning of reflogs and old objects), so be cautious about using this flag."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1959
+msgid ""
+"Do a partial history rewrite, resulting in the mixture of old and new "
+"history.  This implies a default of update-no-add for --replace-refs, "
+"disables rewriting refs/remotes/origin/* to refs/heads/*, disables removing "
+"of the 'origin' remote, disables removing unexported refs, disables expiring "
+"the reflog, and disables the automatic post-filter gc.  Also, this modifies "
+"--tag-rename and --refname-callback options such that instead of replacing "
+"old refs with new refnames, it will instead create new refs and keep the old "
+"ones around.  Use with caution."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1975
+msgid ""
+"Limit history rewriting to the specified refs.  Implies --partial.  In "
+"addition to the normal caveats of --partial (mixing old and new history, no "
+"automatic remapping of refs/remotes/origin/* to refs/heads/*, etc.), this "
+"also may cause problems for pruning of degenerate empty merge commits when "
+"negative revisions are specified."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1983
+msgid ""
+"Do not change the repository.  Run `git fast-export` and filter its output, "
+"and save both the original and the filtered version for comparison.  This "
+"also disables rewriting commit messages due to not knowing new commit IDs "
+"and disables filtering of some empty commits due to inability to query the "
+"fast-import backend."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:1990
+msgid ""
+"Print additional information about operations being performed and commands "
+"being run.  When used together with --dry-run, also show extra information "
+"about what would be run."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2012
+msgid ""
+"Instead of running `git fast-export` and filtering its output, filter the "
+"fast-export stream from stdin.    The stdin must be in the expected input "
+"format (e.g. it needs to include original-oid directives)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2017
+msgid "Pass --quiet to other git commands called"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2023
+msgid ""
+"Error: --analyze is incompatible with --path* flags; it's a read-only "
+"operation."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2026
+msgid "Error: --analyze is incompatible with --stdin."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2041
+msgid "Error: --use-base-name and --path-rename are incompatible."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2056
+msgid "Error: need git >= 2.24.0"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2060
+msgid "Error: need git >= 2.23.0"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2073
+msgid "Error: need git >= 2.22.0"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2080
+#, python-format
+msgid "Error: could not parse --strip-blobs-bigger-than argument %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2145
+#, python-format
+msgid ""
+"Error: In %s, 'glob:' and '==>' are incompatible (renaming globs makes no "
+"sense)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2153
+msgid ""
+"Error: When rename directories, if OLDNAME and NEW_NAME are both non-empty "
+"and either ends with a slash then both must."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2176
+msgid "No arguments specified."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2299
+#, python-format
+msgid "Unhandled change type(s): %(change_type)s (in commit %(commit)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2318
+#, python-format
+msgid "Processed %d commits"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2328
+msgid "Nothing to analyze; repository is empty."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2385
+msgid "Error: rev-list|diff-tree pipeline failed; see above."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2392
+msgid "<present>"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2442
+msgid "Overall Statistics"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2443
+msgid "Number of commits"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2445
+msgid "Number of filenames"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2447
+msgid "Number of directories"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2449
+msgid "Number of file extensions"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2452
+msgid "Total unpacked size (bytes)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2454
+msgid "Total packed size (bytes)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2459
+msgid "Caveats"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2460
+msgid "Sizes"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2461
+msgid ""
+"\n"
+"        Packed size represents what size your repository would be if no\n"
+"        trees, commits, tags, or other metadata were included (though it "
+"may\n"
+"        fail to represent de-duplication; see below).  It also represents "
+"the\n"
+"        current packing, which may be suboptimal if you haven't gc'ed for a\n"
+"        while.\n"
+"\n"
+"        Unpacked size represents what size your repository would be if no\n"
+"        trees, commits, tags, or other metadata were included AND if no\n"
+"        files were packed; i.e., without delta-ing or compression.\n"
+"\n"
+"        Both unpacked and packed sizes can be slightly misleading.  "
+"Deleting\n"
+"        a blob from history not save as much space as the unpacked size,\n"
+"        because it is obviously normally stored in packed form.  Also,\n"
+"        deleting a blob from history may not save as much space as its "
+"packed\n"
+"        size either, because another blob could be stored as a delta "
+"against\n"
+"        that blob, so when you remove one blob another blob's packed size "
+"may\n"
+"        grow.\n"
+"\n"
+"        Also, the sum of the packed sizes can add up to more than the\n"
+"        repository size; if the same contents appeared in the repository in\n"
+"        multiple places, git will automatically de-dupe and store only one\n"
+"        copy, while the way sizes are added in this analysis adds the size\n"
+"        for each file path that has those contents.  Further, if a file is\n"
+"        ever reverted to a previous version's contents, the previous\n"
+"        version's size will be counted multiple times in this analysis, "
+"even\n"
+"        though git will only store it once.\n"
+"        "
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2490
+msgid "Deletions"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2491
+#, python-format
+msgid ""
+"\n"
+"        Whether a file is deleted is not a binary quality, since it can be\n"
+"        deleted on some branches but still exist in others.  Also, it might\n"
+"        exist in an old tag, but have been deleted in versions newer than\n"
+"        that.  More thorough tracking could be done, including looking at\n"
+"        merge commits where one side of history deleted and the other "
+"modified,\n"
+"        in order to give a more holistic picture of deletions.  However, "
+"that\n"
+"        algorithm would not only be more complex to implement, it'd also be\n"
+"        quite difficult to present and interpret by users.  Since --analyze\n"
+"        is just about getting a high-level rough picture of history, it "
+"instead\n"
+"        implements the simplistic rule that is good enough for 98% of "
+"cases:\n"
+"          A file is marked as deleted if the last commit in the fast-export\n"
+"          stream that mentions the file lists it as deleted.\n"
+"        This makes it dependent on topological ordering, but generally "
+"gives\n"
+"        the \"right\" answer.\n"
+"        "
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2508
+msgid "Renames"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2509
+msgid ""
+"\n"
+"        Renames share the same non-binary nature that deletions do, plus\n"
+"        additional challenges:\n"
+"          * If the renamed file is renamed again, instead of just two names "
+"for\n"
+"            a path you can have three or more.\n"
+"          * Rename pairs of the form (oldname, newname) that we consider to "
+"be\n"
+"            different names of the \"same file\" might only be valid over "
+"certain\n"
+"            commit ranges.  For example, if a new commit reintroduces a "
+"file\n"
+"            named oldname, then new versions of oldname aren't the \"same "
+"file\"\n"
+"            anymore.  We could try to portray this to the user, but it's "
+"easier\n"
+"            for the user to just break the pairing and only report unbroken\n"
+"            rename pairings to the user.\n"
+"          * The ability for users to rename files differently in different\n"
+"            branches means that our chains of renames will not necessarily "
+"be\n"
+"            linear but may branch out.\n"
+"        "
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2543
+msgid "Deleted directories by reverse size"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2545
+#: .\venv\Lib\site-packages\git_filter_repo.py:2557
+msgid "Format: unpacked size, packed size, date deleted, directory name\n"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2553
+#: .\venv\Lib\site-packages\git_filter_repo.py:2564
+msgid "<toplevel>"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2556
+msgid "All directories by reverse size"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2568
+msgid "Deleted extensions by reverse size"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2570
+#: .\venv\Lib\site-packages\git_filter_repo.py:2582
+msgid "Format: unpacked size, packed size, date deleted, extension name\n"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2578
+#: .\venv\Lib\site-packages\git_filter_repo.py:2589
+msgid "<no extension>"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2581
+msgid "All extensions by reverse size"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2593
+msgid "Deleted paths by reverse accumulated size"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2595
+msgid "Format: unpacked size, packed size, date deleted, path name(s)\n"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2607
+msgid "All paths by reverse accumulated size"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2609
+msgid "Format: unpacked size, packed size, date deleted, path name\n"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2621
+msgid "Files by sha and associated pathnames in reverse size"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2622
+msgid "Format: sha, unpacked size, packed size, filename(s) object stored as\n"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2656
+#, python-format
+msgid "Writing reports to %s..."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2659
+msgid "done.\n"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2798
+#, python-format
+msgid "Parsed %d commits"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2813
+#, python-format
+msgid "Error: Cannot pass a %s_callback to RepoFilter AND pass --%s-callback"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2818
+#, python-format
+msgid "Error: --%s-callback should have a return statement"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2874
+msgid ""
+"Note: when cloning local repositories, you need to pass\n"
+"      --no-local to git clone to avoid this issue.\n"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2877
+#, python-format
+msgid ""
+"Aborting: Refusing to destructively overwrite repo history since\n"
+"this does not look like a fresh clone.\n"
+"  (%s)\n"
+"%sPlease operate on a fresh clone instead.  If you want to proceed\n"
+"anyway, use --force."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2894
+msgid "expected freshly packed repo"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2900
+msgid "expected one remote, origin"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2906
+msgid "GIT_DIR must be ."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2908
+msgid "GIT_DIR must be .git"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2918
+#, python-format
+msgid "expected at most one entry in the reflog for %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2923
+msgid "has stashed changes"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2929
+msgid "you have uncommitted changes"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2931
+msgid "you have unstaged changes"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2933
+msgid "you have untracked changes"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2941
+#, python-format
+msgid "%s exists, but %s not found"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2944
+#, python-format
+msgid "%s does not match %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2950
+msgid "you have multiple worktrees"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:2961
+msgid "Repacking your repo and cleaning out old unneeded objects"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3348
+msgid "File renaming caused colliding pathnames!\n"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3349
+msgid "  Commit: {}\n"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3350
+msgid "  Filename: {}"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3524
+#, python-format
+msgid "Failed loading %s from %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3549
+#, python-format
+msgid "Failed to find %s to save to %s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3682
+#: .\venv\Lib\site-packages\git_filter_repo.py:3749
+msgid "git update-ref failed; see above"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3754
+msgid "old"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3754
+msgid "new"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3789
+#, python-format
+msgid "Failed to find new id for %(refname)s (old id was %(old_hash)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3809
+msgid ""
+"\n"
+"          The following commits used to be merge commits but due to "
+"filtering\n"
+"          are now regular commits; they likely have suboptimal commit "
+"messages\n"
+"          (e.g. \"Merge branch next into master\").  Original commit hash on "
+"the\n"
+"          left, commit hash after filtering/rewriting on the right:\n"
+"          "
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3821
+msgid ""
+"\n"
+"          The following commits were filtered out, but referenced in "
+"another\n"
+"          commit message.  The reference to the now-nonexistent commit hash\n"
+"          (or a substring thereof) was left as-is in any commit messages:\n"
+"          "
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3831
+msgid "No filtering problems encountered.\n"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3834
+msgid "This file exists to allow you to filter again without --force.\n"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3892
+msgid "Error: fast-export failed; see above."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3901
+msgid "Error: fast-import failed; see above."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3915
+msgid "NOTE: Not running fast-import or cleaning up; --dry-run passed."
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3917
+msgid "      Requested filtering can be seen by comparing:"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3920
+msgid "      Requested filtering can be seen at:"
+msgstr ""
+
+#: .\venv\Lib\site-packages\git_filter_repo.py:3940
+msgid "Completely finished after {:.2f} seconds."
+msgstr ""

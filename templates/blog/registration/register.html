@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 {% extends "blog/base.html" %}
+{% load i18n %}
 
-{% block title %}Создать аккаунт{% endblock %}
+{% block title %}{% trans "Создать аккаунт" %}{% endblock %}
 
 {% block content %}
-  <h1>Создать аккаунт</h1>
-  <p>Пожалуйста, зарегистрируйтесь, используя следующую форму:</p>
+  <h1>{% trans "Создать аккаунт" %}</h1>
+  <p>{% trans "Пожалуйста, зарегистрируйтесь, используя следующую форму:" %}</p>
   <form action="." method="post">
     {{ user_form.as_p }}
     {% csrf_token %}
-    <p><input type="submit" value="Create my account"></p>
+    <p><input type="submit" value="{% trans "Создать аккаунт" %}"></p>
   </form>
 {% endblock %}
 </html>

@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 {% extends "blog/base.html" %}
+{% load i18n %}
 
-{% block title %}Редактирование аккаунта{% endblock %}
+{% block title %}{% trans "Редактирование аккаунта" %}{% endblock %}
 
 {% block content %}
-  <h1>Редактирование аккаунта</h1>
-  <p>Вы можете редактировать аккаунт используя следующую форму:</p>
+  <h1>{% trans "Редактирование аккаунта" %}</h1>
+  <p>{% trans "Вы можете редактировать аккаунт используя следующую форму:" %}</p>
   <form action="." method="post" enctype="multipart/form-data">
     <div>{{ user_form.as_p }}</div>
     <div>{{ profile_form.as_p }}</div>
     {% csrf_token %}
-    <p><input type="submit" value="Save changes"></p>
+    <p><input type="submit" value="{% trans "Сохранить" %}"></p>
   </form>
 {% endblock %}
 </html>

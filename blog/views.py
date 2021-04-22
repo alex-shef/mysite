@@ -11,6 +11,8 @@ from .models import Post, Profile
 
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 
+from django.utils.translation import gettext_lazy as _
+
 
 def post_list(request):
     object_list = Post.published.all()
@@ -143,9 +145,9 @@ def edit(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, 'Профиль успешно обновлён')
+            messages.success(request, _('Профиль успешно обновлён'))
         else:
-            messages.error(request, 'Ошибка обновления профиля')
+            messages.error(request, _('Ошибка обновления профиля'))
     else:
         user_form = UserEditForm(instance=request.user)
         profile_form = ProfileEditForm(instance=request.user.profile)

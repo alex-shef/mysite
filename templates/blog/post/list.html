@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 {% extends "blog/base.html" %}
-{% block title %}Блог о банках РБ{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "Блог о банках РБ" %}{% endblock %}
 {% block content %}
-    <h1>Блог о банках РБ</h1>
+    <h1>{% trans "Блог о банках РБ" %}</h1>
     {% for post in posts %}
         <h2>
             <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
         </h2>
-        <p class="date">{{ post.author }} опубликовал {{ post.publish }}</p>
+        <p class="date">{{ post.author }} {% trans "опубликовал" %} {{ post.publish }}</p>
         {{ post.body|safe|linebreaks|truncatewords_html:30 }}
     {% endfor %}
     {% include "blog/pagination.html" with page=page_obj %}
