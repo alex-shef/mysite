@@ -8,3 +8,4 @@ sqlparse
 psycopg2
 pillow
 django-rosetta
+django-modeltranslation

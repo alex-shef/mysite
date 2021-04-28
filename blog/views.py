@@ -97,9 +97,10 @@ def post_search(request):
         if form.is_valid():
             query = form.cleaned_data['query']
             # results = Post.objects.annotate(search=SearchVector('title', 'body'),).filter(search=query)
-            search_vector = SearchVector('title', weight='A') + SearchVector('body', weight='B')
+            search_vector = SearchVector('title_ru', 'title_en', weight='A') +\
+                            SearchVector('body_ru', 'body_en', weight='B')
             search_query = SearchQuery(query)
-            results = Post.objects.annotate(
+            results = Post.published.annotate(
                 search=search_vector,
                 rank=SearchRank(search_vector, search_query)
                 ).filter(rank__gte=0.1).order_by('-rank')

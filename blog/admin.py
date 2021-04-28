@@ -3,12 +3,14 @@ from django_summernote.admin import SummernoteModelAdmin
 
 from .models import Post, Comment, Profile
 
+from modeltranslation.admin import TranslationAdmin
+
 
 # admin.site.register(Post, PostAdmin)
 
 
 @admin.register(Post)
-class PostAdmin(SummernoteModelAdmin):
+class PostAdmin(TranslationAdmin, SummernoteModelAdmin):
     list_display = ('title', 'slug', 'author', 'publish', 'status', 'id')
     list_filter = ('status', 'created', 'publish', 'author')
     search_fields = ('title', 'body')

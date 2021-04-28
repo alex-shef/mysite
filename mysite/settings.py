@@ -31,6 +31,7 @@ SITE_ID = 1
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'django_summernote',
-    'rosetta'
+    'rosetta',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +128,8 @@ LOCALE_PATHS = (
     'locale',
     os.path.join(BASE_DIR, 'locale/'),
 )
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 
 TIME_ZONE = 'UTC'
 
