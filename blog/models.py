@@ -70,7 +70,7 @@ class Comment(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name=_('user'))
     date_of_birth = models.DateField(_('date_of_birth'), blank=True, null=True)
-    photo = models.ImageField(_('photo'), upload_to='users/%Y/%m/%d/', blank=True)
+    photo = models.ImageField(_('photo'), upload_to='users/%Y/%m/%d/', blank=True, null=True)
 
     def __str__(self):
         return 'Profile for user {}'.format(self.user)
