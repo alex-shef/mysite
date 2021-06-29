@@ -1,4 +1,4 @@
-## Final work IT-academy by Aleksei Shevchuk on Python3 (still in development)
+## Final work IT-academy by Aleksei Shevchuk on Django(Python3)
 
 ### The blog about Belarusian banks.
 This blog will publish information about Belarusian banks: comparison of services, commissions, and exclusive offers.
