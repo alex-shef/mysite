@@ -2,33 +2,13 @@
 
 ### The blog with registration users system, internationalization and full-text search.
 
+  
+  It is assumed that you have Docker installed. 
+  Otherwise, you can choose another branch: postgresql or sqlite(with reduced functionality).
 
-*SETUP INSTRUCTIONS for Windows*
-  
-  It is assumed that you have Python and PostgreSQL installed.
-  
-  1. If 'pip' not installed:
-        https://pip.pypa.io/en/stable/installing/
-        
-  2. Creating an isolated Python environment
-  
-        `pip install virtualenv`
-        
-        `virtualenv my_env`
-        
-        `my_env\Scripts\activate`
-        
-  3. Install the libraries
-  
-        `pip install -r requirements.txt`
-
-  4. Creating the database 'blog', and her filling.
-        
-        You can use 'blog-dump.sql' or 'blog_backup_pgadmin.backup' in the working directory for approximate filling of the database.
-        
 *APPLICATION LAUNCH*
 
-   `python manage.py runserver`
+   `docker-compose up --build`
    
    http://127.0.0.1:8000/admin/ - Django administration
 
