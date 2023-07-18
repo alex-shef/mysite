@@ -1,10 +1,8 @@
 from django import forms
+from django.contrib.auth.models import User
+from django.utils.translation import gettext_lazy as _
 
 from .models import Comment, Profile
-
-from django.contrib.auth.models import User
-
-from django.utils.translation import gettext_lazy as _
 
 
 class EmailPostForm(forms.Form):

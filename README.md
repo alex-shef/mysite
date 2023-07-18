@@ -6,6 +6,8 @@
   It is assumed that you have Docker installed. 
   Otherwise, you can choose another branch: postgresql or sqlite(with reduced functionality).
 
+  Test coverage 95%.
+
 *APPLICATION LAUNCH*
 
    `docker-compose up --build`

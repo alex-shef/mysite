@@ -19,8 +19,8 @@ services:
       context: .
       dockerfile: Dockerfile
     command: python manage.py runserver 0.0.0.0:8000
-#    volumes:
-#      - .:/mysite
+    volumes:
+      - .:/mysite
     ports:
       - "8000:8000"
     depends_on:

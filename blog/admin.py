@@ -1,9 +1,8 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
+from modeltranslation.admin import TranslationAdmin
 
 from .models import Post, Comment, Profile
-
-from modeltranslation.admin import TranslationAdmin
 
 
 # admin.site.register(Post, PostAdmin)

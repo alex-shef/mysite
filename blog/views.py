@@ -1,17 +1,15 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from django.core.mail import send_mail
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
+from django.utils.translation import gettext_lazy as _
 from django.views.generic import ListView
 
 from .forms import EmailPostForm, CommentForm, SearchForm, UserRegistrationForm, UserEditForm, ProfileEditForm
 from .models import Post, Profile
-
-from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
-
-from django.utils.translation import gettext_lazy as _
 
 
 def post_list(request):
@@ -145,6 +143,7 @@ def edit(request):
                                        files=request.FILES)
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
+            print(request.user.profile.__dict__)
             profile_form.save()
             messages.success(request, _('Профиль успешно обновлён'))
         else:
