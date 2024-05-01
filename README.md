@@ -22,7 +22,7 @@ The user can view posts, share, comment, log in to their blog account and edit i
 
 In the Django admin panel, you can create and manage publications using the WYSIWYG editor "Summernote". You can also manage users and comments.
 
-Using a Django Management Command `python manage.py mailing --days` you can mailing posts for a certain number of days to all users.
+Using a Django Management Command `python manage.py mailing --days` you can send posts for a certain number of days to all users.
 
 Added:
 * sitemap.xml for indexing the site

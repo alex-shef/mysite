@@ -12,7 +12,7 @@ class PostModelTest(TestCase):
     def setUpTestData(cls):
         user = User.objects.create_user(username='testuser', password='testpassword')
         cls.obj_id = Post.objects.create(title='Test Post', slug='test-post', author=user, body='This is a test post',
-                            publish=timezone.now(), status='published').pk
+                                         publish=timezone.now(), status='published').pk
 
     def test_title_max_length(self):
         post = Post.objects.get(id=self.obj_id)
@@ -70,7 +70,8 @@ class PostModelTest(TestCase):
 
     def test_get_absolute_url(self):
         post = Post.objects.get(id=self.obj_id)
-        expected_url = '/en/blog/{}/{}/{}/{}/'.format(post.publish.year, post.publish.month, post.publish.day, post.slug)
+        expected_url = '/en/blog/{}/{}/{}/{}/'.format(post.publish.year, post.publish.month, post.publish.day,
+                                                      post.slug)
         self.assertEqual(post.get_absolute_url(), expected_url)
 
 
