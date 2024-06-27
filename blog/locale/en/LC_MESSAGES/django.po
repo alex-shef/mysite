@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-22 20:01+0300\n"
+"POT-Creation-Date: 2024-06-27 12:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,111 +18,111 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\blog\forms.py:11
+#: .\blog\forms.py:9
 msgid "Name"
 msgstr ""
 
-#: .\blog\forms.py:13
+#: .\blog\forms.py:11
 msgid "to"
 msgstr ""
 
-#: .\blog\forms.py:14 .\blog\models.py:56 .\blog\models.py:63
+#: .\blog\forms.py:12 .\blog\models.py:58 .\blog\models.py:65
 msgid "comment"
 msgstr ""
 
-#: .\blog\forms.py:24
+#: .\blog\forms.py:22
 msgid "query"
 msgstr ""
 
-#: .\blog\forms.py:33
+#: .\blog\forms.py:31
 msgid "Password"
 msgstr ""
 
-#: .\blog\forms.py:35
+#: .\blog\forms.py:33
 msgid "Repeat password"
 msgstr ""
 
-#: .\blog\forms.py:42
+#: .\blog\forms.py:40
 msgid "Username"
 msgstr ""
 
-#: .\blog\models.py:18
+#: .\blog\models.py:17
 msgid "Draft"
 msgstr ""
 
-#: .\blog\models.py:19
+#: .\blog\models.py:18
 msgid "Published"
 msgstr ""
 
-#: .\blog\models.py:21
+#: .\blog\models.py:20
 msgid "title"
 msgstr ""
 
-#: .\blog\models.py:22
+#: .\blog\models.py:21
 msgid "slug"
 msgstr ""
 
-#: .\blog\models.py:24
+#: .\blog\models.py:23
 msgid "author"
 msgstr ""
 
-#: .\blog\models.py:25
+#: .\blog\models.py:24
 msgid "post_body"
 msgstr ""
 
-#: .\blog\models.py:26
+#: .\blog\models.py:25
 msgid "publish"
 msgstr ""
 
-#: .\blog\models.py:27 .\blog\models.py:57
+#: .\blog\models.py:26 .\blog\models.py:59
 msgid "created"
 msgstr ""
 
-#: .\blog\models.py:28 .\blog\models.py:58
+#: .\blog\models.py:27 .\blog\models.py:60
 msgid "updated"
 msgstr ""
 
-#: .\blog\models.py:29
+#: .\blog\models.py:28
 msgid "status"
 msgstr ""
 
-#: .\blog\models.py:37 .\blog\models.py:53
+#: .\blog\models.py:39 .\blog\models.py:55
 msgid "post"
 msgstr ""
 
-#: .\blog\models.py:38
+#: .\blog\models.py:40
 msgid "posts"
 msgstr ""
 
-#: .\blog\models.py:54
+#: .\blog\models.py:56
 msgid "name"
 msgstr ""
 
-#: .\blog\models.py:59
+#: .\blog\models.py:61
 msgid "active"
 msgstr ""
 
-#: .\blog\models.py:64
+#: .\blog\models.py:66
 msgid "comments"
 msgstr ""
 
-#: .\blog\models.py:71
+#: .\blog\models.py:73
 msgid "user"
 msgstr ""
 
-#: .\blog\models.py:72
+#: .\blog\models.py:74
 msgid "date_of_birth"
 msgstr ""
 
-#: .\blog\models.py:73
+#: .\blog\models.py:75
 msgid "photo"
 msgstr ""
 
-#: .\blog\models.py:79
+#: .\blog\models.py:81
 msgid "profile"
 msgstr ""
 
-#: .\blog\models.py:80
+#: .\blog\models.py:82
 msgid "profiles"
 msgstr ""
 

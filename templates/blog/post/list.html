@@ -2,9 +2,9 @@
 <html>
 {% extends "blog/base.html" %}
 {% load i18n %}
-{% block title %}{% trans "Блог о банках РБ" %}{% endblock %}
+{% block title %}{% trans "Блог о финансах" %}{% endblock %}
 {% block content %}
-    <h1>{% trans "Блог о банках РБ" %}</h1>
+    <h1>{% trans "Блог о финансах" %}</h1>
     {% for post in posts %}
         <h2>
             <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>

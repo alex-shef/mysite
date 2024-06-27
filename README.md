@@ -1,6 +1,6 @@
-## Final work IT-academy by Aleksei Shevchuk on Django(Python3) and PostgreSQL.
+## The blog on Django(Python3) with PostgreSQL.
 
-### The blog with registration users system, internationalization and full-text search.
+### Includes registration users system, internationalization and full-text search.
 
   
   It is assumed that you have Docker installed. 

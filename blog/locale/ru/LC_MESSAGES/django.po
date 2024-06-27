@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-22 20:01+0300\n"
+"POT-Creation-Date: 2024-06-27 12:05+0300\n"
 "PO-Revision-Date: 2021-04-21 17:53+0000\n"
 "Last-Translator: b'Alexei Shevchuck <alexei.shef@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,111 +21,111 @@ msgstr ""
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.6\n"
 
-#: .\blog\forms.py:11
+#: .\blog\forms.py:9
 msgid "Name"
 msgstr ""
 
-#: .\blog\forms.py:13
+#: .\blog\forms.py:11
 msgid "to"
 msgstr "Email получателя"
 
-#: .\blog\forms.py:14 .\blog\models.py:56 .\blog\models.py:63
+#: .\blog\forms.py:12 .\blog\models.py:58 .\blog\models.py:65
 msgid "comment"
 msgstr "Комментарий"
 
-#: .\blog\forms.py:24
+#: .\blog\forms.py:22
 msgid "query"
 msgstr "Запрос"
 
-#: .\blog\forms.py:33
+#: .\blog\forms.py:31
 msgid "Password"
 msgstr ""
 
-#: .\blog\forms.py:35
+#: .\blog\forms.py:33
 msgid "Repeat password"
 msgstr "Повторите пароль"
 
-#: .\blog\forms.py:42
+#: .\blog\forms.py:40
 msgid "Username"
 msgstr "Логин"
 
-#: .\blog\models.py:18
+#: .\blog\models.py:17
 msgid "Draft"
 msgstr "Черновик"
 
-#: .\blog\models.py:19
+#: .\blog\models.py:18
 msgid "Published"
 msgstr "Опубликовано"
 
-#: .\blog\models.py:21
+#: .\blog\models.py:20
 msgid "title"
 msgstr "Заголовок"
 
-#: .\blog\models.py:22
+#: .\blog\models.py:21
 msgid "slug"
 msgstr "Ярлык"
 
-#: .\blog\models.py:24
+#: .\blog\models.py:23
 msgid "author"
 msgstr "Автор"
 
-#: .\blog\models.py:25
+#: .\blog\models.py:24
 msgid "post_body"
 msgstr "Пост"
 
-#: .\blog\models.py:26
+#: .\blog\models.py:25
 msgid "publish"
 msgstr "Опубликовано"
 
-#: .\blog\models.py:27 .\blog\models.py:57
+#: .\blog\models.py:26 .\blog\models.py:59
 msgid "created"
 msgstr "Создано"
 
-#: .\blog\models.py:28 .\blog\models.py:58
+#: .\blog\models.py:27 .\blog\models.py:60
 msgid "updated"
 msgstr "Обновлено"
 
-#: .\blog\models.py:29
+#: .\blog\models.py:28
 msgid "status"
 msgstr "Статус"
 
-#: .\blog\models.py:37 .\blog\models.py:53
+#: .\blog\models.py:39 .\blog\models.py:55
 msgid "post"
 msgstr "Пост"
 
-#: .\blog\models.py:38
+#: .\blog\models.py:40
 msgid "posts"
 msgstr "Посты"
 
-#: .\blog\models.py:54
+#: .\blog\models.py:56
 msgid "name"
 msgstr "Имя"
 
-#: .\blog\models.py:59
+#: .\blog\models.py:61
 msgid "active"
 msgstr "Отображение"
 
-#: .\blog\models.py:64
+#: .\blog\models.py:66
 msgid "comments"
 msgstr "Комментарии"
 
-#: .\blog\models.py:71
+#: .\blog\models.py:73
 msgid "user"
 msgstr "Пользователь"
 
-#: .\blog\models.py:72
+#: .\blog\models.py:74
 msgid "date_of_birth"
 msgstr "Дата рождения"
 
-#: .\blog\models.py:73
+#: .\blog\models.py:75
 msgid "photo"
 msgstr "Фото"
 
-#: .\blog\models.py:79
+#: .\blog\models.py:81
 msgid "profile"
 msgstr "Профиль"
 
-#: .\blog\models.py:80
+#: .\blog\models.py:82
 msgid "profiles"
 msgstr "Профили"
 
