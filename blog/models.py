@@ -33,6 +33,9 @@ class Post(models.Model):
 
     class Meta:
         ordering = ('-publish',)
+        indexes = [
+            models.Index(fields=['-publish']),
+        ]
         verbose_name = _('post')
         verbose_name_plural = _('posts')
 
@@ -68,7 +71,7 @@ class Comment(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name=_('user'))
-    date_of_birth = models.DateField(_('date_of_birth'), blank=True, null=True)
+    date_of_birth = models.DateField(_('date_of_birth'), blank=True, null=True, help_text='YYYY-MM-DD')
     photo = models.ImageField(_('photo'), upload_to='users/%Y/%m/%d/', blank=True, null=True)
 
     def __str__(self):
