@@ -302,6 +302,8 @@ class EditViewTest(TestCase):
             'photo': SimpleUploadedFile('avatar.jpg', b'avatar content', content_type='image/jpeg'),
         })
         self.assertEqual(response.status_code, 200)
+        import time
+        time.sleep(1)
         user.refresh_from_db()
         profile.refresh_from_db()
         self.assertEqual(user.first_name, 'John')
