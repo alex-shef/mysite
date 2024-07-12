@@ -1,3 +1,0 @@
-FROM postgres:13
-
-COPY blog-2021_06_29_17_44_37-dump.sql /docker-entrypoint-initdb.d/

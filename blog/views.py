@@ -8,8 +8,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import ListView
 
-from .forms import EmailPostForm, CommentForm, SearchForm, UserRegistrationForm, UserEditForm, ProfileEditForm
-from .models import Post, Profile
+from blog.forms import EmailPostForm, CommentForm, SearchForm, UserRegistrationForm, UserEditForm, ProfileEditForm
+from blog.models import Post, Profile
 
 
 def post_list(request):

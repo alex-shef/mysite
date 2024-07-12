@@ -1,9 +1,7 @@
 django~=4.2.14
-django_summernote~=0.8.20.0
 pytz~=2019.3
 sqlparse~=0.5.0
 psycopg2-binary~=2.9.9
-pillow~=10.3.0
-django-rosetta~=0.9.6
 django-modeltranslation~=0.17.1
 python-dotenv~=1.0.1
+flake8~=7.1.0
