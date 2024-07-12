@@ -289,7 +289,7 @@ class RegisterViewTest(TestCase):
         self.assertTemplateUsed(response, 'blog/registration/register.html')
 
 
-class EditViewTest(TestCase):
+class EditProfileViewTest(TestCase):
     def setUp(self):
         self.client = Client()
 
