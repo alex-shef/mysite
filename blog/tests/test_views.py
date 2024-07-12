@@ -60,7 +60,6 @@ class PostListViewTest(TestCase):
 
 
 class PostDetailViewTest(TestCase):
-
     current_datetime = timezone.now()
 
     @classmethod
@@ -68,43 +67,63 @@ class PostDetailViewTest(TestCase):
         user = User.objects.create_user(username='testuser', password='testpassword')
         post = Post.objects.create(title='Test Post', slug='test-post', author=user,
                                    body='This is a test post', publish=cls.current_datetime, status='published')
-        Comment.objects.create(post=post, name='John Doe', email='johndoe@example.com', body='Test comment', active=True)
+        Comment.objects.create(post=post, name='John Doe', email='johndoe@example.com', body='Test comment',
+                               active=True)
 
     def setUp(self):
         self.client = Client()
 
     def test_view_url_exists_at_desired_location(self):
-        response = self.client.get(f'/en/blog/{self.current_datetime.year}/{self.current_datetime.month}/{self.current_datetime.day}/test-post/')
+        response = self.client.get(f'/en/blog/{self.current_datetime.year}/{self.current_datetime.month}/'
+                                   f'{self.current_datetime.day}/test-post/')
         self.assertEqual(response.status_code, 200)
 
     def test_view_url_accessible_by_name(self):
-        response = self.client.get(reverse('blog:post_detail', args=[self.current_datetime.year, self.current_datetime.month, self.current_datetime.day, 'test-post']))
+        response = self.client.get(reverse('blog:post_detail',
+                                           args=[self.current_datetime.year, self.current_datetime.month,
+                                                 self.current_datetime.day, 'test-post']))
+
         self.assertEqual(response.status_code, 200)
 
     def test_view_uses_correct_template(self):
-        response = self.client.get(reverse('blog:post_detail', args=[self.current_datetime.year, self.current_datetime.month, self.current_datetime.day, 'test-post']))
+        response = self.client.get(reverse('blog:post_detail',
+                                           args=[self.current_datetime.year, self.current_datetime.month,
+                                                 self.current_datetime.day, 'test-post']))
+
         self.assertTemplateUsed(response, 'blog/post/detail.html')
 
     def test_detail_page_displays_post_data(self):
-        response = self.client.get(reverse('blog:post_detail', args=[self.current_datetime.year, self.current_datetime.month, self.current_datetime.day, 'test-post']))
+        response = self.client.get(reverse('blog:post_detail',
+                                           args=[self.current_datetime.year, self.current_datetime.month,
+                                                 self.current_datetime.day, 'test-post']))
+
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Test Post')
         self.assertContains(response, 'This is a test post')
 
     def test_detail_page_displays_comments(self):
-        response = self.client.get(reverse('blog:post_detail', args=[self.current_datetime.year, self.current_datetime.month, self.current_datetime.day, 'test-post']))
+        response = self.client.get(reverse('blog:post_detail',
+                                           args=[self.current_datetime.year, self.current_datetime.month,
+                                                 self.current_datetime.day, 'test-post']))
+
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'John Doe')
         self.assertContains(response, 'Test comment')
 
     def test_detail_page_can_add_comment(self):
-        response = self.client.post(reverse('blog:post_detail', args=[self.current_datetime.year, self.current_datetime.month, self.current_datetime.day, 'test-post']), data={
-            'name': 'Jane Doe',
-            'email': 'janedoe@example.com',
-            'body': 'Another test comment',
-        })
+        response = self.client.post(reverse('blog:post_detail',
+                                            args=[self.current_datetime.year, self.current_datetime.month,
+                                                  self.current_datetime.day, 'test-post']),
+                                    data={
+                                        'name': 'Jane Doe',
+                                        'email': 'janedoe@example.com',
+                                        'body': 'Another test comment',
+                                    })
+
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse('blog:post_detail', args=[self.current_datetime.year, self.current_datetime.month, self.current_datetime.day, 'test-post']))
+        self.assertRedirects(response, reverse('blog:post_detail',
+                                               args=[self.current_datetime.year, self.current_datetime.month,
+                                                     self.current_datetime.day, 'test-post']))
 
         post = Post.objects.get(slug='test-post')
         comments = post.comments.filter(active=True)
@@ -115,11 +134,15 @@ class PostDetailViewTest(TestCase):
         self.assertEqual(new_comment.body, 'Another test comment')
 
     def test_detail_page_with_invalid_form_data_does_not_add_comment(self):
-        response = self.client.post(reverse('blog:post_detail', args=[self.current_datetime.year, self.current_datetime.month, self.current_datetime.day, 'test-post']), data={
-            'name': '',  # Invalid data
-            'email': 'janedoe@example.com',
-            'body': 'Another test comment',
-        })
+        response = self.client.post(reverse('blog:post_detail',
+                                            args=[self.current_datetime.year, self.current_datetime.month,
+                                                  self.current_datetime.day, 'test-post']),
+                                    data={
+                                        'name': '',  # Invalid data
+                                        'email': 'janedoe@example.com',
+                                        'body': 'Another test comment',
+                                    })
+
         self.assertEqual(response.status_code, 200)
 
         post = Post.objects.get(slug='test-post')
@@ -157,7 +180,7 @@ class PostShareViewTest(TestCase):
         self.assertEqual(response.status_code, 200)  # The view should return to the same page
         self.assertEqual(len(mail.outbox), 1)
         sent_email = mail.outbox[0]
-        self.assertEqual(sent_email.subject, f'John Doe (johndoe@example.com) рекоммендует Вам пост "Test Post"')
+        self.assertEqual(sent_email.subject, 'John Doe (johndoe@example.com) рекомендует Вам пост "Test Post"')
         self.assertIn('Check out this post!', sent_email.body)
         self.assertIn(post.get_absolute_url(), sent_email.body)
 
@@ -252,7 +275,7 @@ class RegisterViewTest(TestCase):
         self.client = Client()
 
     def test_view_redirects_authenticated_user_to_account(self):
-        user = User.objects.create_user(username='testuser', password='testpassword')
+        User.objects.create_user(username='testuser', password='testpassword')
         self.client.login(username='testuser', password='testpassword')
 
     def test_view_returns_200_for_unauthenticated_user(self):
@@ -277,14 +300,14 @@ class EditViewTest(TestCase):
 
     def test_view_returns_200_for_authenticated_user(self):
         user = User.objects.create_user(username='testuser', password='testpassword')
-        profile = Profile.objects.create(user=user)
+        Profile.objects.create(user=user)
         self.client.login(username='testuser', password='testpassword')
         response = self.client.get(reverse('blog:edit'))
         self.assertEqual(response.status_code, 200)
 
     def test_view_uses_correct_templates(self):
         user = User.objects.create_user(username='testuser', password='testpassword')
-        profile = Profile.objects.create(user=user)
+        Profile.objects.create(user=user)
         self.client.login(username='testuser', password='testpassword')
         response = self.client.get(reverse('blog:edit'))
         self.assertTemplateUsed(response, 'blog/registration/edit.html')

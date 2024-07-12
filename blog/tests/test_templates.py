@@ -17,14 +17,17 @@ class BaseTemplateTests(TestCase):
         response = self.client.get('/', follow=True, HTTP_ACCEPT_LANGUAGE='ru')
         self.assertContains(response, '<a href="{0}">Блог о финансах</a>'.format(reverse('blog:post_list')))
         self.assertContains(response,
-                            '<p>В этом блоге будет публиковаться информация о банках: сравнение услуг, комиссий, эксклюзивных предложений.</p>')
+                            '<p>В этом блоге будет публиковаться информация о банках: сравнение услуг, комиссий, '
+                            'эксклюзивных предложений.</p>')
         self.assertContains(response, '<a href="{0}">Поиск</a>'.format(reverse('blog:post_search')))
 
     def test_authenticated_user_sidebar(self):
         self.client.login(username='testuser', password='12345')
         response = self.client.get('/', follow=True, HTTP_ACCEPT_LANGUAGE='ru')
-        self.assertContains(response, 'Привет, <a href="{0}">{1}.</a>'.format(reverse('blog:account'), self.user.first_name))
-        self.assertContains(response, '<a href="{0}">&nbsp;&nbsp;&nbsp;Выйти из аккаунта</a>'.format(reverse('blog:logout')))
+        self.assertContains(response,
+                            'Привет, <a href="{0}">{1}.</a>'.format(reverse('blog:account'), self.user.first_name))
+        self.assertContains(response,
+                            '<a href="{0}">&nbsp;&nbsp;&nbsp;Выйти из аккаунта</a>'.format(reverse('blog:logout')))
 
     def test_unauthenticated_user_sidebar(self):
         response = self.client.get('/', follow=True, HTTP_ACCEPT_LANGUAGE='ru')
@@ -81,7 +84,6 @@ class PostDetailTemplateTest(TestCase):
         activate('ru')
 
     def test_post_detail_template(self):
-
         url = reverse('blog:post_detail', kwargs={
             'year': self.post.publish.year,
             'month': self.post.publish.month,
@@ -215,7 +217,8 @@ class SharePostTemplateTest(TestCase):
             'to': 'friend@example.com',
             'comments': 'Check out this post!'
         }
-        response = self.client.post(reverse('blog:post_share', args=[self.post.id]), data=form_data, HTTP_ACCEPT_LANGUAGE='ru')
+        response = self.client.post(reverse('blog:post_share', args=[self.post.id]), data=form_data,
+                                    HTTP_ACCEPT_LANGUAGE='ru')
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, '<h1>E-mail успешно отправлен</h1>')
         self.assertContains(response, '"Test Post" было успешно отправлено friend@example.com.')

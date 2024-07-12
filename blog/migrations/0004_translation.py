@@ -68,7 +68,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='comment',
             name='post',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comments', to='blog.Post', verbose_name='post'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comments',
+                                    to='blog.Post', verbose_name='post'),
         ),
         migrations.AlterField(
             model_name='comment',
@@ -78,7 +79,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='post',
             name='author',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='blog_posts', to=settings.AUTH_USER_MODEL, verbose_name='author'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='blog_posts',
+                                    to=settings.AUTH_USER_MODEL, verbose_name='author'),
         ),
         migrations.AlterField(
             model_name='post',
@@ -103,7 +105,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='post',
             name='status',
-            field=models.CharField(choices=[('draft', 'Draft'), ('published', 'Published')], default='draft', max_length=10, verbose_name='status'),
+            field=models.CharField(choices=[('draft', 'Draft'), ('published', 'Published')], default='draft',
+                                   max_length=10, verbose_name='status'),
         ),
         migrations.AlterField(
             model_name='post',
@@ -128,6 +131,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='profile',
             name='user',
-            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='user'),
+            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL,
+                                       verbose_name='user'),
         ),
     ]

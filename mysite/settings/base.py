@@ -11,8 +11,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-from pathlib import Path
+from django.utils.translation import gettext_lazy as _
 from dotenv import load_dotenv
+from pathlib import Path
+
 
 load_dotenv()
 
@@ -112,8 +114,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-from django.utils.translation import gettext_lazy as _
-
 LANGUAGES = (
     ('ru', _('Russian')),
     ('en', _('English')),
@@ -146,7 +146,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'blog/static'), ]
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 AUTHENTICATION_BACKENDS = [
@@ -157,7 +156,6 @@ AUTHENTICATION_BACKENDS = [
 LOGIN_REDIRECT_URL = 'blog:account'
 LOGIN_URL = 'blog:login'
 LOGOUT_URL = 'blog:logout'
-
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 

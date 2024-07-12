@@ -66,17 +66,10 @@ def post_share(request, post_id):
         if form.is_valid():
             cd = form.cleaned_data
             post_url = request.build_absolute_uri(post.get_absolute_url())
-            subject = '{} ({}) рекоммендует Вам пост "{}"'.format(
-                cd['name'],
-                cd['email'],
-                post.title)
+            subject = '{} ({}) рекомендует Вам пост "{}"'.format(cd['name'], cd['email'], post.title)
 
             message = 'Прочтите пост "{}" по адресу {}\n\n' \
-                      '{}\'s comments: {}'.format(
-                post.title,
-                post_url,
-                cd['name'],
-                cd['comments'])
+                      '{}\'s comments: {}'.format(post.title, post_url, cd['name'], cd['comments'])
 
             send_mail(subject, message, cd['email'], [cd['to']])
             sent = True
@@ -95,8 +88,8 @@ def post_search(request):
         if form.is_valid():
             query = form.cleaned_data['query']
             # results = Post.objects.annotate(search=SearchVector('title', 'body'),).filter(search=query)
-            search_vector = SearchVector('title_ru', 'title_en', weight='A') + \
-                            SearchVector('body_ru', 'body_en', weight='B')
+            search_vector = (SearchVector('title_ru', 'title_en', weight='A') +
+                             SearchVector('body_ru', 'body_en', weight='B'))
             search_query = SearchQuery(query)
             results = Post.published.annotate(
                 search=search_vector,

@@ -1,4 +1,5 @@
-from .base import *
+from mysite.settings.base import *  # noqa: F403, F401
+import os
 
 DEBUG = False
 
