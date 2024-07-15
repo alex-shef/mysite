@@ -3,6 +3,7 @@ from django.core import mail
 from django.test import TestCase, Client
 from django.urls import reverse
 from django.utils import timezone
+from django.utils.translation import activate
 
 from blog.models import Post, Comment, Profile
 
@@ -255,11 +256,12 @@ class AccountViewTest(TestCase):
 
     def setUp(self):
         self.client = Client()
+        activate('en')
 
     def test_view_redirects_for_unauthenticated_user(self):
         response = self.client.get(reverse('blog:account'))
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, '/blog/login/?next=/blog/account/')
+        self.assertRedirects(response, 'en/blog/login/?next=en/blog/account/')
 
     def test_view_returns_200_for_authenticated_user(self):
         self.client.login(username='testuser', password='testpassword')
@@ -294,11 +296,12 @@ class RegisterViewTest(TestCase):
 class EditProfileViewTest(TestCase):
     def setUp(self):
         self.client = Client()
+        activate('en')
 
     def test_view_redirects_unauthenticated_user(self):
         response = self.client.get(reverse('blog:edit'))
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, '/blog/login/?next=/blog/edit/')
+        self.assertRedirects(response, 'en/blog/login/?next=en/blog/edit/')
 
     def test_view_returns_200_for_authenticated_user(self):
         user = User.objects.create_user(username='testuser', password='testpassword')
