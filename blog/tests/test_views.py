@@ -261,7 +261,7 @@ class AccountViewTest(TestCase):
     def test_view_redirects_for_unauthenticated_user(self):
         response = self.client.get(reverse('blog:account'))
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, 'en/blog/login/?next=en/blog/account/')
+        self.assertRedirects(response, '/en/blog/login/?next=/en/blog/account/')
 
     def test_view_returns_200_for_authenticated_user(self):
         self.client.login(username='testuser', password='testpassword')
@@ -301,7 +301,7 @@ class EditProfileViewTest(TestCase):
     def test_view_redirects_unauthenticated_user(self):
         response = self.client.get(reverse('blog:edit'))
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, 'en/blog/login/?next=en/blog/edit/')
+        self.assertRedirects(response, '/en/blog/login/?next=/en/blog/edit/')
 
     def test_view_returns_200_for_authenticated_user(self):
         user = User.objects.create_user(username='testuser', password='testpassword')
