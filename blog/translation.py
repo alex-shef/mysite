@@ -1,6 +1,6 @@
 from modeltranslation.translator import register, TranslationOptions
 
-from .models import Post
+from blog.models import Post
 
 
 @register(Post)
