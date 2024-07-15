@@ -9,11 +9,12 @@ RUN apt-get update && \
     python3-pip \
     python3-venv \
     libpq-dev && \
-    python3 -m venv /opt/venv && \
-    rm -rf /var/lib/apt/lists/*
+    python3 -m venv /opt/venv
 
-COPY ../../test_requirements.txt /tmp/
-RUN /opt/venv/bin/pip install --no-cache-dir -r /tmp/test_requirements.txt
+COPY ../../requirements.txt /tmp/
+RUN /opt/venv/bin/pip install --no-cache-dir -r /tmp/requirements.txt \
+    flake8 && \
+    rm -rf /var/lib/apt/lists/*
 
 ENV PATH="/opt/venv/bin:$PATH"
 
