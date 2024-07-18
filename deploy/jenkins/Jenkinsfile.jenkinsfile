@@ -49,7 +49,7 @@ pipeline {
             }
             environment {
                 APP_IMAGE = "ghcr.io/alex-shef/django-app"
-                IMAGE_TAG = "v3.4.1"
+                IMAGE_TAG = "v3.4.2"
             }
             options {skipDefaultCheckout()}
             stages {
