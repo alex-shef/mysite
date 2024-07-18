@@ -1,0 +1,98 @@
+#!/usr/bin/env groovy
+
+pipeline {
+    agent none
+    options {buildDiscarder logRotator(numToKeepStr: '10')
+            preserveStashes()
+    }
+    stages {
+        stage('Tests') {
+            agent {
+                kubernetes {
+                    inheritFrom 'backend-tests'
+                }
+            }
+            stages {
+                stage('Checkout') {
+                    steps {
+                        script {
+                            git branch: 'deploy', url: 'https://github.com/alex-shef/mysite.git'
+                        }
+                    }
+                }
+
+                stage('Linting') {
+                    steps {
+                        container('backend-tests') {
+                                sh 'flake8 .'
+                        }
+                    }
+                }
+
+                stage('Backend Tests') {
+                    environment {
+                        POSTGRES_HOST = 'postgresql'
+                        POSTGRES_PORT = 5432
+                        POSTGRES_DB = 'myblog'
+                        DJANGO_SETTINGS_MODULE = 'mysite.settings.prod'
+                    }
+                    steps {
+                        container('backend-tests') {
+                            withCredentials([usernamePassword(credentialsId: 'jenkins-database-usr-psw', passwordVariable: 'POSTGRES_PASSWORD', usernameVariable: 'POSTGRES_USER'),
+                                            string(credentialsId: 'jenkins-django-secretkey', variable: 'SECRET_KEY')]) {
+                                sh 'python3 manage.py test blog/tests'
+                                stash name: 'source', includes: '**/*'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('Build, Push, Deploy App') {
+            agent {
+                kubernetes {
+                    inheritFrom 'app-builder'
+                }
+            }
+            environment {
+                APP_IMAGE = "ghcr.io/alex-shef/django-app"
+                IMAGE_TAG = "v3.4.0"
+            }
+            stages {
+                stage('Build') {
+                    steps {
+                        container('app-builder') {
+                            unstash 'source'
+                            sh 'podman build -t $APP_IMAGE:$IMAGE_TAG -f deploy/app.Dockerfile .'
+                        }
+                    }
+                }
+
+                stage('Push') {
+                    environment {
+                        GITHUB_PACKAGES = credentials('jenkins-github-usr-psw')
+                    }
+                    options { retry(3) }
+                    steps {
+                        container('app-builder') {
+                            sh 'echo $GITHUB_PACKAGES_PSW | podman login ghcr.io -u $GITHUB_PACKAGES_USR --password-stdin'
+                            sh 'podman push $APP_IMAGE:$IMAGE_TAG'
+                            sh 'podman tag $APP_IMAGE:$IMAGE_TAG $APP_IMAGE:latest'
+                            sh 'podman push $APP_IMAGE:latest'
+                        }
+                    }
+                }
+
+                stage('Deploy') {
+                    steps {
+                        container('app-builder') {
+                            sh 'kubectl set image statefulset/django-nginx django=$APP_IMAGE:$IMAGE_TAG'
+                            sh 'kubectl rollout status statefulset/django-nginx'
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
