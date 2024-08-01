@@ -13,6 +13,21 @@ pipeline {
                 }
             }
             stages {
+                stage('Check Commit Changes') {
+                    steps {
+                        script {
+                            def changedFiles = sh(script: 'git diff --name-only HEAD^ HEAD', returnStdout: true).trim().split('\n')
+                            def shouldBuild = changedFiles.any { !it.startsWith('deploy') }
+                            if shouldBuild {
+                                echo 'Proceeding with build.'
+                            } else {
+                                echo 'Commit was made to "deploy" dir. Skipping build.'
+                                currentBuild.result = 'SUCCESS'
+                                return
+                            }
+                        }
+                    }
+                }
                 stage('Linting') {
                     steps {
                         container('backend-tests') {
@@ -64,12 +79,12 @@ pipeline {
 
                 stage('Push') {
                     environment {
-                        GITHUB_PACKAGES = credentials('jenkins-github-usr-psw')
+                        GITHUB_CRD = credentials('jenkins-github-usr-psw')
                     }
                     options { retry(3) }
                     steps {
                         container('app-builder') {
-                            sh 'echo $GITHUB_PACKAGES_PSW | podman login ghcr.io -u $GITHUB_PACKAGES_USR --password-stdin'
+                            sh 'echo $GITHUB_CRD_PSW | podman login ghcr.io -u $GITHUB_CRD_USR --password-stdin'
                             sh 'podman push $APP_IMAGE:$IMAGE_TAG'
                             sh 'podman tag $APP_IMAGE:$IMAGE_TAG $APP_IMAGE:latest'
                             sh 'podman push $APP_IMAGE:latest'
@@ -77,12 +92,20 @@ pipeline {
                     }
                 }
 
-                stage('Deploy') {
+                stage('Update Deployment File') {
+                    environment {
+                        GIT_REPO_NAME = "mysite"
+                        GITHUB_CRD = credentials('jenkins-github-usr-psw')
+                    }
                     steps {
-                        container('app-builder') {
-                            sh 'kubectl set image statefulset/django-nginx django=$APP_IMAGE:$IMAGE_TAG'
-                            sh 'kubectl rollout status statefulset/django-nginx'
-                        }
+                        sh '''
+                        git config user.email "alexei.shef@gmail.com"
+                        git config user.name "jenkins"
+                        sed -i "s/replaceImageTag/$IMAGE_TAG/g" deploy/app-deploy.yaml
+                        git add deploy/app-deploy.yaml
+                        git commit -m "Update deployment image to version $IMAGE_TAG"
+                        git push @github.com/$GITHUB_CRD_USR/$GIT_REPO_NAME.git>https://$GITHUB_CRD_USR:$GITHUB_CRD_PSW@github.com/$GITHUB_CRD_USR/$GIT_REPO_NAME.git HEAD:deploy
+                        '''
                     }
                 }
             }
