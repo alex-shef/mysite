@@ -17,7 +17,7 @@ spec:
       - name: github-packages-cfg
       containers:
       - name: django-app
-        image: ghcr.io/alex-shef/django-app:replaceImageTag
+        image: ghcr.io/alex-shef/django-app:v3.5.0
         imagePullPolicy: Always
         env:
         - name: DJANGO_SETTINGS_MODULE
