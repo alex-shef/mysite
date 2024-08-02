@@ -27,14 +27,14 @@ pipeline {
                                 echo 'Proceeding with build.'
                             } else {
                                 echo 'Commit was made to "deploy" dir. Skipping build.'
-                                env.SKIP_BUILD = 'true'
+                                env.SKIP_BUILD = true
                             }
                         }
                     }
                 }
                 stage('Linting') {
                     when {
-                        expression { return env.SKIP_BUILD != 'true' }
+                        not{expression {return env.SKIP_BUILD}}
                     }
                     steps {
                         container('backend-tests') {
@@ -45,7 +45,7 @@ pipeline {
 
                 stage('Backend Tests') {
                     when {
-                        expression { return env.SKIP_BUILD != 'true' }
+                        not{expression {return env.SKIP_BUILD}}
                     }
                     environment {
                         POSTGRES_HOST = 'postgresql'
@@ -67,7 +67,8 @@ pipeline {
 
         stage('Build, Push, Deploy App') {
             when {
-                expression { return env.SKIP_BUILD != 'true' }
+                beforeAgent true
+                not{expression {return env.SKIP_BUILD}}
             }
             agent {
                 kubernetes {
