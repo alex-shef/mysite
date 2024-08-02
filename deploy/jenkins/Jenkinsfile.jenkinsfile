@@ -1,10 +1,7 @@
 #!/usr/bin/env groovy
-
+def new_build = true
 pipeline {
     agent none
-    environment {
-        SKIP_BUILD = false
-    }
     options {buildDiscarder logRotator(numToKeepStr: '10')
             preserveStashes()
     }
@@ -27,14 +24,14 @@ pipeline {
                                 echo 'Proceeding with build.'
                             } else {
                                 echo 'Commit was made to "deploy" dir. Skipping build.'
-                                env.SKIP_BUILD = true
+                                new_build = false
                             }
                         }
                     }
                 }
                 stage('Linting') {
                     when {
-                        expression {not{return env.SKIP_BUILD}}
+                        expression {return new_build}
                     }
                     steps {
                         container('backend-tests') {
@@ -45,7 +42,7 @@ pipeline {
 
                 stage('Backend Tests') {
                     when {
-                        expression {not{return env.SKIP_BUILD}}
+                        expression {return new_build}
                     }
                     environment {
                         POSTGRES_HOST = 'postgresql'
@@ -68,7 +65,7 @@ pipeline {
         stage('Build, Push, Deploy App') {
             when {
                 beforeAgent true
-                expression {not{return env.SKIP_BUILD}}
+                expression {return new_build}
             }
             agent {
                 kubernetes {
