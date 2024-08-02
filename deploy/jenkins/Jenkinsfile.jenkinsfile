@@ -20,9 +20,9 @@ pipeline {
                     steps {
                         script {
                             def changedFiles = sh(script: 'git diff --name-only HEAD^ HEAD', returnStdout: true).trim().split('\n')
-                            echo "Changed files: ${changedFiles.join(', ')}"
+                            echo "Changed files: ${changedFiles}"
                             def shouldBuild = changedFiles.any { !it.startsWith('deploy') }
-
+                            echo "shouldBuild: ${shouldBuild}"
                             if (shouldBuild) {
                                 echo 'Proceeding with build.'
                             } else {
@@ -34,7 +34,7 @@ pipeline {
                 }
                 stage('Linting') {
                     when {
-                        not{expression {return env.SKIP_BUILD}}
+                        expression {not{return env.SKIP_BUILD}}
                     }
                     steps {
                         container('backend-tests') {
@@ -45,7 +45,7 @@ pipeline {
 
                 stage('Backend Tests') {
                     when {
-                        not{expression {return env.SKIP_BUILD}}
+                        expression {not{return env.SKIP_BUILD}}
                     }
                     environment {
                         POSTGRES_HOST = 'postgresql'
@@ -68,7 +68,7 @@ pipeline {
         stage('Build, Push, Deploy App') {
             when {
                 beforeAgent true
-                not{expression {return env.SKIP_BUILD}}
+                expression {not{return env.SKIP_BUILD}}
             }
             agent {
                 kubernetes {
@@ -77,7 +77,7 @@ pipeline {
             }
             environment {
                 APP_IMAGE = "ghcr.io/alex-shef/django-app"
-                IMAGE_TAG = "v3.5.1"
+                IMAGE_TAG = "v3.5.2"
             }
             stages {
                 stage('Build') {
