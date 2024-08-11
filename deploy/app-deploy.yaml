@@ -23,6 +23,8 @@ spec:
         env:
         - name: DJANGO_SETTINGS_MODULE
           value: mysite.settings.prod
+        - name: DJANGO_LOG_LEVEL
+          value: "INFO"
         - name: GCP_STORAGE_MEDIA_NAME
           value: 48642fdde6407be6-media-bucket
         - name: GCP_STORAGE_STATIC_NAME
