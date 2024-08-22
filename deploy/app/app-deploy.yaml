@@ -26,9 +26,9 @@ spec:
         - name: DJANGO_LOG_LEVEL
           value: "INFO"
         - name: GCP_STORAGE_MEDIA_NAME
-          value: 48642fdde6407be6-media-bucket
+          value: mysite-media-bucket
         - name: GCP_STORAGE_STATIC_NAME
-          value: 48642fdde6407be6-static-bucket
+          value: mysite-static-bucket
         envFrom:
         - secretRef:
             name: kube-vault-secrets
@@ -38,4 +38,6 @@ spec:
         - sh
         - -c
         args:
-        - python manage.py migrate && sleep 5 && python manage.py collectstatic --noinput && gunicorn --config deploy/gunicorn_config.py mysite.wsgi:application
+        - |
+          python manage.py migrate && sleep 5 && python manage.py collectstatic --noinput && \
+          gunicorn --config gunicorn_config.py mysite.wsgi:application

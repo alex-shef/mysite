@@ -1,0 +1,105 @@
+alloy:
+  configMap:
+    content: |-
+      logging {
+        level = "info"
+        format = "logfmt"
+      }
+      loki.write "default" {
+        endpoint {
+          url = "http://loki-gateway.loki.svc.cluster.local/loki/api/v1/push"
+        }
+      }
+      
+      discovery.kubernetes "pod" {
+        role = "pod"
+        namespaces {
+          names = ["default", "loki", "cert-manager"]
+        }
+        attach_metadata {
+          node = true
+        }
+      }
+      discovery.relabel "pod_logs" {
+        targets = discovery.kubernetes.pod.targets
+        rule {
+          source_labels = ["__meta_kubernetes_namespace"]
+          action = "replace"
+          target_label = "namespace"
+        }
+        rule {
+          source_labels = ["__meta_kubernetes_pod_name"]
+          action = "replace"
+          target_label = "pod"
+        }
+        rule {
+          source_labels = ["__meta_kubernetes_pod_container_name"]
+          action = "replace"
+          target_label = "container"
+        }
+        rule {
+          source_labels = ["__meta_kubernetes_pod_container_image"]
+          action = "replace"
+          target_label = "container_image"
+        }
+        rule {
+          source_labels = ["__meta_kubernetes_pod_container_port_name"]
+          action = "replace"
+          target_label = "container_port_name"
+        }
+        rule {
+          source_labels = ["__meta_kubernetes_pod_container_port_number"]
+          action = "replace"
+          target_label = "container_port"
+        }
+        rule {
+          source_labels = ["__meta_kubernetes_pod_container_port_protocol"]
+          action = "replace"
+          target_label = "container_port_protocol"
+        }
+        rule {
+          source_labels = ["__meta_kubernetes_pod_ready"]
+          action = "replace"
+          target_label = "pod_ready"
+        }
+        rule {
+          source_labels = ["__meta_kubernetes_pod_phase"]
+          action = "replace"
+          target_label = "pod_phase"
+        }
+        rule {
+          source_labels = ["__meta_kubernetes_pod_host_ip"]
+          action = "replace"
+          target_label = "pod_host_ip"
+        }
+        rule {
+          source_labels = ["__meta_kubernetes_pod_controller_kind"]
+          action = "replace"
+          target_label = "pod_controller_kind"
+        }
+        rule {
+          source_labels = ["__meta_kubernetes_pod_controller_name"]
+          action = "replace"
+          target_label = "pod_controller"
+        }
+      }
+      loki.source.kubernetes "pod_logs" {
+        targets    = discovery.relabel.pod_logs.output
+        forward_to = [loki.write.default.receiver]
+        clustering {
+            enabled = true
+        }
+      }
+      
+      loki.source.kubernetes_events "cluster_events" {
+        job_name   = "integrations/kubernetes/eventhandler"
+        log_format = "logfmt"
+        forward_to = [loki.write.default.receiver]
+      }
+
+  clustering:
+    enabled: true
+
+controller:
+  type: 'statefulset'
+  replicas: 2

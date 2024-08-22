@@ -1,0 +1,89 @@
+loki:
+  auth_enabled: false
+
+  commonConfig:
+    ring:
+#      instance_addr: ""
+      kvstore:
+        # Backend storage to use for the ring. Supported values are: consul, etcd,
+        # inmemory, memberlist, multi.
+        # CLI flag: -common.storage.ring.store
+        store: memberlist
+    replication_factor: 3
+#    path_prefix: /loki
+
+  storage:
+    type: gcs
+
+  compactor:
+    working_directory: var/loki/retention
+    compaction_interval: 10m
+    retention_enabled: true
+    retention_delete_delay: 1h
+    retention_delete_worker_count: 150
+    delete_request_store: gcs
+
+  limits_config:
+    retention_period: 24h
+
+  schemaConfig:
+    configs:
+      - from: 2024-07-22
+        store: tsdb
+        object_store: gcs
+        schema: v13
+        index:
+          prefix: index_
+          period: 24h
+
+  ingester:
+    chunk_encoding: snappy
+  tracing:
+    enabled: true
+  querier:
+    # Default is 4, if you have enough memory and CPU you can increase, reduce if OOMing
+    max_concurrent: 4
+
+  storageConfig:
+    tsdb_shipper:
+      active_index_directory: var/loki/index
+      cache_location: var/loki/index_cache
+      cache_ttl: 24h         # Can be increased for faster performance over longer query periods, uses more disk space
+
+  memcached:
+    chunk_cache:
+      enabled: true
+      host: memcached-chunk-cache.loki.svc.cluster.local
+      service: memcache
+      batch_size: 256
+      parallelism: 10
+    results_cache:
+      enabled: true
+      host: memcached-results-cache.loki.svc.cluster.local
+      service: memcache
+      default_validity: 12h
+
+resultsCache:
+  enabled: false
+  allocatedMemory: 512
+  maxItemMemory: 5
+  connectionLimit: 512
+
+chunksCache:
+  enabled: false
+  allocatedMemory: 1024
+  maxItemMemory: 2
+  connectionLimit: 512
+
+write:
+  replicas: 2
+  persistence:
+    size: 2Gi
+    storageClass: standard
+read:
+  replicas: 2
+backend:
+  replicas: 2
+  persistence:
+    size: 2Gi
+    storageClass: standard

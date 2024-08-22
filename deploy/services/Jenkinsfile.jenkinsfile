@@ -16,7 +16,8 @@ pipeline {
                 stage('Check Commit Changes') {
                     steps {
                         script {
-                            def changedFiles = sh(script: 'git diff --name-only HEAD^ HEAD', returnStdout: true).trim().split('\n')
+                            def changedFiles = sh(script: 'git diff --name-only HEAD^ HEAD',
+                                                    returnStdout: true).trim().split('\n')
                             echo "Changed files: ${changedFiles}"
                             def shouldBuild = changedFiles.any { !it.startsWith('deploy') }
                             echo "shouldBuild: ${shouldBuild}"
@@ -52,8 +53,9 @@ pipeline {
                     }
                     steps {
                         container('backend-tests') {
-                            withCredentials([usernamePassword(credentialsId: 'jenkins-database-usr-psw', passwordVariable: 'POSTGRES_PASSWORD', usernameVariable: 'POSTGRES_USER'),
-                                            string(credentialsId: 'jenkins-django-secretkey', variable: 'SECRET_KEY')]) {
+                            withCredentials([usernamePassword(credentialsId: 'jenkins-database-usr-psw',
+                                        passwordVariable: 'POSTGRES_PASSWORD', usernameVariable: 'POSTGRES_USER'),
+                                        string(credentialsId: 'jenkins-django-secretkey', variable: 'SECRET_KEY')]) {
                                 sh 'python3 manage.py test blog/tests'
                             }
                         }
@@ -74,13 +76,13 @@ pipeline {
             }
             environment {
                 APP_IMAGE = "ghcr.io/alex-shef/django-app"
-                IMAGE_TAG = "v3.6.0"
+                IMAGE_TAG = "v3.7.0"
             }
             stages {
                 stage('Build') {
                     steps {
                         container('app-builder') {
-                            sh 'podman build -t $APP_IMAGE:$IMAGE_TAG -f deploy/app.Dockerfile .'
+                            sh 'podman build -t $APP_IMAGE:$IMAGE_TAG -f deploy/app/app.Dockerfile .'
                         }
                     }
                 }
@@ -109,10 +111,11 @@ pipeline {
                         sh '''
                         git config user.email "alexei.shef@gmail.com"
                         git config user.name "jenkins"
-                        sed -i "s/v[0-9]*\\.[0-9]*\\.[0-9]*\\b/$IMAGE_TAG/g" deploy/app-deploy.yaml
-                        git add deploy/app-deploy.yaml
+                        sed -i "s/v[0-9]*\\.[0-9]*\\.[0-9]*\\b/$IMAGE_TAG/g" deploy/app/app-deploy.yaml
+                        git add deploy/app/app-deploy.yaml
                         git commit -m "Update deployment image to version $IMAGE_TAG"
-                        git push https://$GITHUB_CRD_USR:$GITHUB_CRD_PSW@github.com/$GITHUB_CRD_USR/$GIT_REPO_NAME.git HEAD:deploy
+                        git push https://$GITHUB_CRD_USR:$GITHUB_CRD_PSW@github.com/$GITHUB_CRD_USR/$GIT_REPO_NAME.git \
+                            HEAD:deploy
                         '''
                     }
                 }

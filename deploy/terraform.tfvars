@@ -1,0 +1,8 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
+project_id = "prime-granite-432915-v0"
+region     = "us-central1"
+zone       = "us-central1-b"
+gke_num_nodes = 4
+vault_app = "mysite" #Name of Hashicorp Cloud secrets application

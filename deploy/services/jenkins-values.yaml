@@ -1,0 +1,39 @@
+controller:
+  additionalPlugins:
+    - kubernetes-credentials-provider
+    - github
+
+agent:
+  podTemplates:
+    backendTests: |
+      - name: backend-tests
+        label: backend-tests
+        serviceAccount: jenkins
+        containers:
+          - name: backend-tests
+            image: "ghcr.io/alex-shef/backend-tests:latest"
+            alwaysPullImage: true
+            command: "/bin/sh -c"
+            args: "cat"
+            ttyEnabled: true
+
+    appBuilder: |
+      - name: app-builder
+        label: app-builder
+        serviceAccount: jenkins
+        containers:
+          - name: app-builder
+            image: "ghcr.io/alex-shef/app-builder:latest"
+            alwaysPullImage: true
+            command: "/bin/sh -c"
+            args: "cat"
+            ttyEnabled: true
+            privileged: true
+
+rbac:
+  create: true
+  readSecrets: true
+
+serviceAccount:
+  create: true
+  imagePullSecretName: "github-packages-cfg"
