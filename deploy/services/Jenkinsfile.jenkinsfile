@@ -76,7 +76,7 @@ pipeline {
             }
             environment {
                 APP_IMAGE = "ghcr.io/alex-shef/django-app"
-                IMAGE_TAG = "v3.7.0"
+                IMAGE_TAG = "v3.7.1"
             }
             stages {
                 stage('Build') {

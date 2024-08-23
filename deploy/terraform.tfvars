@@ -6,3 +6,4 @@ region     = "us-central1"
 zone       = "us-central1-b"
 gke_num_nodes = 4
 vault_app = "mysite" #Name of Hashicorp Cloud secrets application
+repository_name = "mysite"

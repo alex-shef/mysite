@@ -26,24 +26,24 @@ resource "kubernetes_secret" "kube_vault_secrets" {
   }
 }
 
-resource "kubernetes_secret" "dockerhub_cfg" {
-  metadata {
-    name = "dockerhub-cfg"
-  }
-  type = "kubernetes.io/dockerconfigjson"
-  data = {
-    ".dockerconfigjson" = jsonencode({
-      auths = {
-        "https://index.docker.io/v1/" = {
-          "username" = var.vault_secrets["DOCKERHUB_USERNAME"]
-          "password" = var.vault_secrets["DOCKERHUB_PASSWORD"]
-          "email"    = var.vault_secrets["DOCKERHUB_EMAIL"]
-          "auth" = base64encode("${var.vault_secrets["DOCKERHUB_USERNAME"]}:${var.vault_secrets["DOCKERHUB_PASSWORD"]}")
-        }
-      }
-    })
-  }
-}
+# resource "kubernetes_secret" "dockerhub_cfg" {
+#   metadata {
+#     name = "dockerhub-cfg"
+#   }
+#   type = "kubernetes.io/dockerconfigjson"
+#   data = {
+#     ".dockerconfigjson" = jsonencode({
+#       auths = {
+#         "https://index.docker.io/v1/" = {
+#           "username" = var.vault_secrets["DOCKERHUB_USERNAME"]
+#           "password" = var.vault_secrets["DOCKERHUB_PASSWORD"]
+#           "email"    = var.vault_secrets["DOCKERHUB_EMAIL"]
+#           "auth" = base64encode("${var.vault_secrets["DOCKERHUB_USERNAME"]}:${var.vault_secrets["DOCKERHUB_PASSWORD"]}")
+#         }
+#       }
+#     })
+#   }
+# }
 
 resource "kubernetes_secret" "github_packages_cfg" {
   metadata {
@@ -64,12 +64,8 @@ resource "kubernetes_secret" "github_packages_cfg" {
   }
 }
 
-# resource "random_id" "bucket_prefix" {
-#   byte_length = 8
-# }
-
 resource "google_storage_bucket" "static" {
-  name          = "mysite-static-bucket"
+  name          = "${var.repository_name}-static-bucket"
   location      = var.region
   uniform_bucket_level_access = true
   versioning {
@@ -81,7 +77,7 @@ resource "google_storage_bucket" "static" {
 }
 
 resource "google_storage_bucket" "media" {
-  name          = "mysite-media-bucket"
+  name          = "${var.repository_name}-media-bucket"
   location      = var.region
 #   force_destroy = true
   uniform_bucket_level_access = true

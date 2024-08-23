@@ -6,7 +6,20 @@
 
 *APPLICATION LAUNCH*
 
-Necessary software: Terraform, gcloud, kubectl.
+Required software: Terraform, gcloud, kubectl.
+
+Required Hashicorp Cloud secrets:
+* 'DOMAIN' - example.com
+* 'GITHUB_EMAIL'
+* 'GITHUB_TOKEN' - with 'repo', 'write:packages', 'delete:packages', 'admin:repo_hook' scopes
+* 'GITHUB_USERNAME'
+* 'POSTGRES_DB' - database name
+* 'POSTGRES_HOST'
+* 'POSTGRES_PASSWORD'
+* 'POSTGRES_PORT'
+* 'POSTGRES_USER'
+* 'SECRET_KEY' - for Django app
+* 'WEB_ADDRESS' - www.example.com
 
 Configure `terraform.tfvars`.
 
@@ -20,9 +33,13 @@ Enable Google Cloud Service Usage API: https://console.cloud.google.com/apis/lib
 
 `terrafrom apply`
 
+Every service has UI (jenkins.domain, argocd.domain, grafana.domain).
+
+A Jenkins job is created and a build version is changed in the Jenkinsfile manually. The Github repo and webhook are configured in the github.tf
+
    *** 
 
-The user can view posts, share, comment, log in to his blog account and edit it, as well as reset a forgotten password and create a new one.
+A user can view posts, share, comment, log in to his blog account and edit it, as well as reset a forgotten password and create a new one.
 
 In the Django admin panel, you can create and manage publications using the WYSIWYG editor "Summernote". You can also manage users and comments.
 

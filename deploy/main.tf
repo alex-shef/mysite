@@ -18,6 +18,9 @@ variable "vault_app" {
   description = "vault app name"
 }
 
+variable "repository_name" {
+  description = "github repository name"
+}
 
 # provider "kubernetes" {
 #   config_path = "~/.kube/config"
@@ -38,6 +41,9 @@ terraform {
     }
     kubectl = {
       source  = "gavinbunney/kubectl"
+    }
+    github = {
+      source  = "integrations/github"
     }
   }
 }
@@ -72,6 +78,18 @@ provider "helm" {
   }
 }
 
+data "hcp_vault_secrets_app" "vault_secrets" {
+  app_name = var.vault_app
+}
+
+data "google_client_config" "current" {}
+
+data "google_container_cluster" "primary" {
+  depends_on = [google_project_service.mysite]
+  name = module.cluster.cluster_name
+  location = var.zone
+}
+
 resource "google_project_service" "mysite" {
   service = "container.googleapis.com"
   disable_on_destroy = false
@@ -86,18 +104,6 @@ module "cluster" {
   zone       = var.zone
 }
 
-data "hcp_vault_secrets_app" "vault_secrets" {
-  app_name = var.vault_app
-}
-
-data "google_client_config" "current" {}
-
-data "google_container_cluster" "primary" {
-  depends_on = [google_project_service.mysite]
-  name = module.cluster.cluster_name
-  location = var.zone
-}
-
 module "app" {
   depends_on = [module.cluster]
   source = "./app"
@@ -106,6 +112,7 @@ module "app" {
   region     = var.region
 #   zone       = var.zone
   vault_secrets = data.hcp_vault_secrets_app.vault_secrets.secrets
+  repository_name = var.repository_name
 }
 
 module "services" {

@@ -2,6 +2,8 @@ controller:
   additionalPlugins:
     - kubernetes-credentials-provider
     - github
+    - strict-crumb-issuer
+    - locale
 
 agent:
   podTemplates:

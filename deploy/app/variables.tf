@@ -17,3 +17,7 @@ variable "region" {
 variable "vault_secrets" {
   description = "vault secrets"
 }
+
+variable "repository_name" {
+  description = "github repository name"
+}
