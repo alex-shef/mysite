@@ -39,3 +39,7 @@ rbac:
 serviceAccount:
   create: true
   imagePullSecretName: "github-packages-cfg"
+
+unclassified:
+  scmGit:
+    hideCredentials: true

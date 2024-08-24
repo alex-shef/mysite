@@ -33,6 +33,10 @@ Enable Google Cloud Service Usage API: https://console.cloud.google.com/apis/lib
 
 `terrafrom apply`
 
+- configure DNS after finishing with ArgoCD error (terraform provider ArgoCD requires working domain)
+
+`terrafrom apply` (again)
+
 Every service has UI (jenkins.domain, argocd.domain, grafana.domain).
 
 A Jenkins job is created and a build version is changed in the Jenkinsfile manually. The Github repo and webhook are configured in the github.tf
