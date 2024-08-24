@@ -57,7 +57,7 @@ pipeline {
                                         passwordVariable: 'POSTGRES_PASSWORD', usernameVariable: 'POSTGRES_USER'),
                                         string(credentialsId: 'jenkins-django-secretkey', variable: 'SECRET_KEY')]) {
                                 sh 'python3 manage.py test blog/tests'
-                                stash name: 'source'
+                                stash name: 'source', useDefaultExcludes: false
                             }
                         }
                     }
