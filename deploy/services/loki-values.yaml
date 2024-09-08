@@ -10,21 +10,10 @@ loki:
         # CLI flag: -common.storage.ring.store
         store: memberlist
     replication_factor: 3
-#    path_prefix: /loki
+#    path_prefix: var/loki
 
   storage:
     type: gcs
-
-  compactor:
-    working_directory: var/loki/retention
-    compaction_interval: 10m
-    retention_enabled: true
-    retention_delete_delay: 1h
-    retention_delete_worker_count: 150
-    delete_request_store: gcs
-
-  limits_config:
-    retention_period: 24h
 
   schemaConfig:
     configs:
@@ -36,19 +25,35 @@ loki:
           prefix: index_
           period: 24h
 
-  ingester:
-    chunk_encoding: snappy
-  tracing:
-    enabled: true
-  querier:
-    # Default is 4, if you have enough memory and CPU you can increase, reduce if OOMing
-    max_concurrent: 4
+  rulerConfig:
+    storage:
+      type: gcs
 
   storageConfig:
     tsdb_shipper:
       active_index_directory: var/loki/index
       cache_location: var/loki/index_cache
       cache_ttl: 24h         # Can be increased for faster performance over longer query periods, uses more disk space
+
+  compactor:
+    working_directory: var/loki/retention
+    compaction_interval: 10m
+    retention_enabled: true
+    retention_delete_delay: 1h
+    retention_delete_worker_count: 150
+    delete_request_store: gcs
+
+  limits_config:
+    volume_enabled: true
+    retention_period: 24h
+
+  querier:
+    # Default is 4, if you have enough memory and CPU you can increase, reduce if OOMing
+    max_concurrent: 4
+  ingester:
+    chunk_encoding: snappy
+  tracing:
+    enabled: true
 
   memcached:
     chunk_cache:

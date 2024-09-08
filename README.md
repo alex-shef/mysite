@@ -20,8 +20,9 @@ Required Hashicorp Cloud secrets:
 * 'POSTGRES_USER'
 * 'SECRET_KEY' - for Django app
 * 'WEB_ADDRESS' - www.example.com
+* 'SLACK_WEBHOOK' - Webhook for SlackApp
 
-Configure `terraform.tfvars`.
+Configure `terraform.tfvars`. Create Slack application for Grafana Alerting.
 
 Enable Google Cloud Service Usage API: https://console.cloud.google.com/apis/library/serviceusage.googleapis.com
 

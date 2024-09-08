@@ -4,7 +4,7 @@ resource "helm_release" "jenkins" {
   chart      = "jenkins"
 
   values = [
-    file("services/jenkins-values.yaml")
+    file("${path.module}/jenkins-values.yaml")
   ]
 }
 
@@ -56,10 +56,14 @@ resource "helm_release" "loki" {
   namespace  = kubernetes_namespace.loki.metadata[0].name
 
   values = [
-    file("services/loki-values.yaml")
+    file("${path.module}/loki-values.yaml")
   ]
   set {
     name  = "loki.storage.bucketNames.chunks"
+    value = google_storage_bucket.loki_logs.name
+  }
+  set {
+    name  = "loki.storage.bucketNames.ruler"
     value = google_storage_bucket.loki_logs.name
   }
   set {
@@ -80,7 +84,7 @@ resource "helm_release" "grafana_alloy" {
   chart      = "alloy"
   namespace  = kubernetes_namespace.loki.metadata[0].name
   values = [
-    file("services/alloy-values.yaml")
+    file("${path.module}/alloy-values.yaml")
   ]
 }
 
@@ -114,9 +118,36 @@ resource "kubernetes_role_binding" "cluster_events_viewer_binding" {
   }
 }
 
+resource "kubernetes_config_map" "grafana_dashboard" {
+  metadata {
+    name = "grafana-dashboard"
+    namespace = kubernetes_namespace.loki.metadata[0].name
+  }
+  data = {
+    "grafana-dashboard.json" = file("${path.module}/dashboard.json")
+  }
+}
+
 resource "helm_release" "grafana" {
+  depends_on = [kubernetes_config_map.grafana_dashboard]
   name       = "grafana"
   repository = "https://grafana.github.io/helm-charts"
   chart      = "grafana"
   namespace  = kubernetes_namespace.loki.metadata[0].name
+  values = [
+    file("${path.module}/grafana-values.yaml")
+  ]
+  set {
+    name  = "alerting.contactpoints\\.yaml.secret.contactPoints[0].receivers[0].settings.url"
+    value = var.vault_secrets["SLACK_WEBHOOK"]
+    type  = "string"
+  }
+  set {
+    name  = "grafana\\.ini.server.domain"
+    value = "grafana.${var.vault_secrets["DOMAIN"]}"
+  }
+  set {
+    name  = "grafana\\.ini.server.root_url"
+    value = "https://grafana.${var.vault_secrets["DOMAIN"]}"
+  }
 }

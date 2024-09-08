@@ -14,7 +14,7 @@ alloy:
       discovery.kubernetes "pod" {
         role = "pod"
         namespaces {
-          names = ["default", "loki", "cert-manager"]
+          names = ["default", "loki"]
         }
         attach_metadata {
           node = true
@@ -53,11 +53,6 @@ alloy:
           target_label = "container_port"
         }
         rule {
-          source_labels = ["__meta_kubernetes_pod_container_port_protocol"]
-          action = "replace"
-          target_label = "container_port_protocol"
-        }
-        rule {
           source_labels = ["__meta_kubernetes_pod_ready"]
           action = "replace"
           target_label = "pod_ready"
@@ -85,10 +80,24 @@ alloy:
       }
       loki.source.kubernetes "pod_logs" {
         targets    = discovery.relabel.pod_logs.output
-        forward_to = [loki.write.default.receiver]
+        forward_to = [loki.process.add_level_label.receiver]
         clustering {
             enabled = true
         }
+      }
+
+      loki.process "add_level_label" {
+        stage.logfmt {
+            mapping = {
+                extracted_level = "level",
+            }
+        }
+        stage.labels {
+            values = {
+                level = "extracted_level",
+            }
+        }
+        forward_to = [loki.write.default.receiver]
       }
       
       loki.source.kubernetes_events "cluster_events" {
@@ -99,6 +108,10 @@ alloy:
 
   clustering:
     enabled: true
+
+  # -- Minimum stability level of components and behavior to enable. Must be
+  #  # one of "experimental", "public-preview", or "generally-available".
+  stabilityLevel: "generally-available"
 
 controller:
   type: 'statefulset'

@@ -1,0 +1,188 @@
+plugins:
+   - grafana-lokiexplore-app
+
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+    - name: loki
+      type: loki
+      url: http://loki-gateway.loki.svc.cluster.local/
+
+alerting:
+  rules.yaml:
+    apiVersion: 1
+    groups:
+      - orgId: 1
+        name: logs
+        folder: mysite
+        interval: 1m
+        rules:
+          - uid: bdx43da11jgn4d
+            title: errors_alert
+            condition: C
+            data:
+              - refId: A
+                queryType: range
+                relativeTimeRange:
+                  from: 3600
+                  to: 0
+                datasourceUid: P982945308D3682D1
+                model:
+                  datasource:
+                    type: loki
+                    uid: P982945308D3682D1
+                  editorMode: code
+                  expr: sum(count_over_time({namespace=~".+", pod=~".+", level=~"error"}[1s]))
+                  intervalMs: 1000
+                  maxDataPoints: 43200
+                  queryType: range
+                  refId: A
+              - refId: C
+                relativeTimeRange:
+                  from: 3600
+                  to: 0
+                datasourceUid: __expr__
+                model:
+                  conditions:
+                    - evaluator:
+                        params:
+                          - 160
+                        type: gt
+                      operator:
+                        type: and
+                      query:
+                        params:
+                          - C
+                      reducer:
+                        params: [ ]
+                        type: last
+                      type: query
+                  datasource:
+                    type: __expr__
+                    uid: __expr__
+                  expression: B
+                  intervalMs: 1000
+                  maxDataPoints: 43200
+                  refId: C
+                  type: threshold
+              - refId: B
+                datasourceUid: __expr__
+                model:
+                  conditions:
+                    - evaluator:
+                        params:
+                          - 0
+                          - 0
+                        type: gt
+                      operator:
+                        type: and
+                      query:
+                        params: [ ]
+                      reducer:
+                        params: [ ]
+                        type: avg
+                      type: query
+                  datasource:
+                    name: Expression
+                    type: __expr__
+                    uid: __expr__
+                  expression: A
+                  intervalMs: 1000
+                  maxDataPoints: 43200
+                  reducer: max
+                  refId: B
+                  type: reduce
+            dashboardUid: ae3ec2c4-1c19-4450-9403-226270fe0c4f
+            panelId: 2
+            noDataState: NoData
+            execErrState: Error
+            for: 1m
+            annotations:
+              __dashboardUid__: ae3ec2c4-1c19-4450-9403-226270fe0c4f
+              __panelId__: "2"
+            labels: { }
+            isPaused: false
+            notification_settings:
+              receiver: Slack
+  notification-templates.yaml:
+    apiVersion: 1
+    templates:
+      - orgId: 1
+        name: slack.title
+        template: |
+          {{ `{{ define "slack.title" }}
+          {{ len .Alerts.Firing }} firing alert(s), {{ len .Alerts.Resolved }} resolved alert(s)
+          {{ end }}` }}
+      - orgId: 1
+        name: slack
+        template: |
+          {{ `{{ define "slack.print_alert" -}}
+          [{{.Status}}] {{ .Labels.alertname }}
+          Labels:
+          {{ range .Labels.SortedPairs -}}
+          - {{ .Name }}: {{ .Value }}
+          {{ end -}}
+          {{ if .Annotations -}}
+          Annotations:
+          {{ range .Annotations.SortedPairs -}}
+          - {{ .Name }}: {{ .Value }}
+          {{ end -}}
+          {{ end -}}
+          {{ if .GeneratorURL -}}
+            Source: {{ .GeneratorURL }}
+          {{ end -}}
+          {{ if .DashboardURL -}}
+            Go to dashboard: {{ .DashboardURL }}
+          {{ end -}}
+          {{ if .SilenceURL -}}
+            Silence: {{ .SilenceURL }}
+          {{- end }}
+          {{- end }}
+          
+          {{ define "slack.message" -}}
+          {{ if .Alerts.Firing -}}
+          {{ len .Alerts.Firing }} firing alert(s):
+          {{ range .Alerts.Firing }}
+          {{ template "slack.print_alert" . }}
+          {{ end -}}
+          {{ end }}
+          {{ if .Alerts.Resolved -}}
+          {{ len .Alerts.Resolved }} resolved alert(s):
+          {{ range .Alerts.Resolved }}
+          {{ template "slack.print_alert" .}}
+          {{ end -}}
+          {{ end }}
+          {{- end }}` }}
+  contactpoints.yaml:
+    secret:
+      apiVersion: 1
+      contactPoints:
+        - orgId: 1
+          name: Slack
+          receivers:
+            - uid: cdx3z4wml9erlb
+              type: slack
+              settings:
+                title: |
+                  {{ `{{ template "slack.title" . }}` }}
+                text: |
+                  {{ `{{ template "slack.message" . }}` }}
+              disableResolveMessage: false
+
+dashboardProviders:
+  dashboardproviders.yaml:
+    apiVersion: 1
+    providers:
+    - name: 'default'
+      orgId: 1
+      folder: ''
+      type: file
+      disableDeletion: true
+      allowUiUpdates: true
+      options:
+          path: /var/lib/grafana/dashboards/default
+#          foldersFromFilesStructure: true
+
+dashboardsConfigMaps:
+  default: "grafana-dashboard"

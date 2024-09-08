@@ -1,25 +1,3 @@
-# provider "kubernetes" {
-#   host  = "https://${var.kube_host}"
-#   token = var.kube_token
-#   cluster_ca_certificate = var.kube_cert
-#   exec {
-#     api_version = "client.authentication.k8s.io/v1beta1"
-#     command     = "gke-gcloud-auth-plugin"
-#   }
-# }
-#
-# provider "helm" {
-#   kubernetes {
-#     host  = "https://${var.kube_host}"
-#     token = var.kube_token
-#     cluster_ca_certificate = var.kube_cert
-#     exec {
-#       api_version = "client.authentication.k8s.io/v1beta1"
-#       command     = "gke-gcloud-auth-plugin"
-#     }
-#   }
-# }
-
 resource "kubernetes_secret" "jenkins_dockerhub_usr_psw" {
   metadata {
     name = "jenkins-dockerhub-usr-psw"

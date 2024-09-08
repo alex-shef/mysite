@@ -22,18 +22,6 @@ variable "repository_name" {
   description = "github repository name"
 }
 
-# provider "kubernetes" {
-#   config_path = "~/.kube/config"
-#   config_context = "gke_${module.cluster.cluster_name}_${var.zone}_${var.project_id}"
-# }
-#
-# provider "helm" {
-#   kubernetes {
-#     config_path = "~/.kube/config"
-#     config_context = "gke_${module.cluster.cluster_name}_${var.zone}_${var.project_id}"
-#   }
-# }
-
 terraform {
   required_providers {
     argocd = {
@@ -110,7 +98,6 @@ module "app" {
 #   cluster_name = module.main.cluster_name
   project_id = var.project_id
   region     = var.region
-#   zone       = var.zone
   vault_secrets = data.hcp_vault_secrets_app.vault_secrets.secrets
   repository_name = var.repository_name
 }
@@ -121,9 +108,5 @@ module "services" {
 #   cluster_name = module.cluster.cluster_name
   project_id = var.project_id
   region     = var.region
-#   zone       = var.zone
   vault_secrets = data.hcp_vault_secrets_app.vault_secrets.secrets
-#   kube_host = data.google_container_cluster.primary.endpoint
-#   kube_token = data.google_client_config.current.access_token
-#   kube_cert = base64decode(data.google_container_cluster.primary.master_auth[0].cluster_ca_certificate)
 }

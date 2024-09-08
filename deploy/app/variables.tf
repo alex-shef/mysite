@@ -1,7 +1,3 @@
-# variable "cluster_name" {
-#   description = "cluster_name"
-# }
-
 variable "project_id" {
   description = "project id"
 }
@@ -9,10 +5,6 @@ variable "project_id" {
 variable "region" {
   description = "region"
 }
-
-# variable "zone" {
-#   description = "zone"
-# }
 
 variable "vault_secrets" {
   description = "vault secrets"

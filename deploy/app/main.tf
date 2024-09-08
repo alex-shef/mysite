@@ -1,15 +1,3 @@
-# provider "kubernetes" {
-#   config_path = "~/.kube/config"
-#   config_context = "gke_${var.cluster_name}_${var.zone}_${var.project_id}"
-# }
-#
-# provider "helm" {
-#   kubernetes {
-#     config_path = "~/.kube/config"
-#     config_context = "gke_${var.cluster_name}_${var.zone}_${var.project_id}"
-#   }
-# }
-
 resource "kubernetes_secret" "kube_vault_secrets" {
   metadata {
     name      = "kube-vault-secrets"

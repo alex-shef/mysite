@@ -15,14 +15,6 @@ data "kubernetes_secret" "argocd_admin_password" {
   }
 }
 
-# terraform {
-#   required_providers {
-#     argocd = {
-#       source = "oboukili/argocd"
-#     }
-#   }
-# }
-
 provider "argocd" {
   server_addr = "argocd.${data.hcp_vault_secrets_app.vault_secrets.secrets["DOMAIN"]}:443"
   username    = "admin"
