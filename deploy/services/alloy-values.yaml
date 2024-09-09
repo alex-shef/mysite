@@ -116,3 +116,4 @@ alloy:
 controller:
   type: 'statefulset'
   replicas: 2
+  enableStatefulSetAutoDeletePVC: true

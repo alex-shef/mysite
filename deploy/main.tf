@@ -10,10 +10,6 @@ variable "zone" {
   description = "zone"
 }
 
-variable "gke_num_nodes" {
-  description = "number of gke nodes"
-}
-
 variable "vault_app" {
   description = "vault app name"
 }
@@ -86,7 +82,6 @@ resource "google_project_service" "mysite" {
 module "cluster" {
   depends_on = [google_project_service.mysite]
   source = "./cluster"
-  gke_num_nodes = var.gke_num_nodes
   project_id = var.project_id
   region     = var.region
   zone       = var.zone

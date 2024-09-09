@@ -4,7 +4,7 @@ metadata:
   name: django-app
   namespace: default
 spec:
-  replicas: 2
+#  replicas: 2
   selector:
     matchLabels:
       app: django-app
@@ -41,3 +41,8 @@ spec:
         - |
           python manage.py migrate && sleep 5 && python manage.py collectstatic --noinput && \
           gunicorn --config gunicorn_config.py mysite.wsgi:application
+        resources:
+          requests:
+            cpu: "100m"
+          limits:
+            cpu: "200m"

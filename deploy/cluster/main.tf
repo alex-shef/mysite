@@ -29,7 +29,11 @@ resource "google_container_node_pool" "primary_nodes" {
   cluster    = google_container_cluster.primary.name
   
   version = google_container_cluster.primary.master_version
-  node_count = var.gke_num_nodes
+
+  autoscaling {
+    min_node_count = 2
+    max_node_count = 6
+  }
 
   node_config {
 
