@@ -42,6 +42,8 @@ Every service has UI (jenkins.domain, argocd.domain, grafana.domain).
 
 A Jenkins job is created and a build version is changed in the Jenkinsfile manually. The Github repo and webhook are configured in the github.tf
 
+Logs are monitored using the dashboard and Explore/Logs.
+
    *** 
 
 A user can view posts, share, comment, log in to his blog account and edit it, as well as reset a forgotten password and create a new one.
